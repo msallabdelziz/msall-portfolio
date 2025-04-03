@@ -10,7 +10,13 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-tech-navy/20 via-tech-dark-blue to-tech-dark-blue -z-10"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-tech-navy/20 via-tech-dark-blue to-tech-dark-blue -z-10">
+        {/* Animated tech background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="grid-pattern"></div>
+          <div className="tech-particles"></div>
+        </div>
+      </div>
       <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer />

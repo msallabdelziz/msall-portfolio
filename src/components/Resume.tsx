@@ -39,8 +39,9 @@ const Resume: React.FC = () => {
             <FileText size={48} className="mx-auto mb-4 text-tech-light-blue" />
             <h3 className="text-xl font-semibold mb-3 text-tech-lightest-slate">Mon CV</h3>
             <p className="text-tech-light-slate mb-6">
-              Vous pouvez consulter ou télécharger mon CV complet pour en savoir plus sur mon parcours professionnel, 
-              mes compétences et mes formations.
+              Je suis Mamadou Abdel Aziz Sall, en phase finale de mon Master 2 en Data Science & IA. 
+              Passionné par l'analyse des données et l'intelligence artificielle, je recherche un stage 
+              de fin d'étude de 4 à 6 mois pour appliquer mes compétences en IA, DATA et Programmation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -51,8 +52,8 @@ const Resume: React.FC = () => {
                 Voir en ligne
               </a>
               <a 
-                href="#"
-                download
+                href="/lovable-uploads/42fb82d8-8cee-45c2-8d7c-c0528fffd7fa.png"
+                download="CV_Mamadou_Abdel_Aziz_Sall.png"
                 className="group flex items-center justify-center w-full sm:w-auto bg-tech-light-blue text-tech-dark-blue hover:bg-tech-light-blue/90 font-medium px-6 py-3 rounded-md transition-all duration-300"
               >
                 <Download size={18} className="mr-2" />

@@ -25,11 +25,46 @@ const Index = () => {
       });
     };
     
+    // Add tech particles animation
+    const createParticle = () => {
+      const particles = document.querySelector('.tech-particles');
+      if (!particles) return;
+      
+      const particle = document.createElement('div');
+      particle.classList.add('tech-particle');
+      
+      // Random position
+      const posX = Math.random() * window.innerWidth;
+      const posY = Math.random() * window.innerHeight;
+      
+      // Random size
+      const size = Math.random() * 6 + 1;
+      
+      // Apply styles
+      particle.style.left = `${posX}px`;
+      particle.style.top = `${posY}px`;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      particles.appendChild(particle);
+      
+      // Remove particle after animation
+      setTimeout(() => {
+        particle.remove();
+      }, 6000);
+    };
+    
+    // Create particles at regular intervals
+    const particleInterval = setInterval(createParticle, 300);
+    
     window.addEventListener('scroll', reveal);
     // Initial check
     setTimeout(reveal, 200);
     
-    return () => window.removeEventListener('scroll', reveal);
+    return () => {
+      window.removeEventListener('scroll', reveal);
+      clearInterval(particleInterval);
+    };
   }, []);
 
   return (
