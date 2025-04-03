@@ -1,10 +1,8 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [displayText, setDisplayText] = useState('');
   const [jobTitle, setJobTitle] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
@@ -12,20 +10,6 @@ const Hero: React.FC = () => {
   
   const fullName = 'Mamadou Abdel Aziz Sall';
   const jobTitles = ['Data Science et IA', 'Developpeur Web'];
-  
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index <= fullName.length) {
-        setDisplayText(fullName.substring(0, index));
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 100);
-    
-    return () => clearInterval(interval);
-  }, []);
   
   useEffect(() => {
     const ticker = setTimeout(() => {
@@ -158,8 +142,18 @@ const Hero: React.FC = () => {
         <p className="text-tech-light-blue mb-5 font-mono">Bonjour, je m'appelle</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight">
           <span className="text-tech-lightest-slate block h-[1.25em]">
-            {displayText}
-            <span className="text-tech-light-blue animate-pulse">|</span>
+            {fullName.split('').map((char, index) => (
+              <span 
+                key={index}
+                className="inline-block"
+                style={{
+                  animation: `float 3s ease-in-out infinite`,
+                  animationDelay: `${index * 0.1}s`
+                }}
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </span>
+            ))}
           </span>
           <span className="text-tech-slate text-3xl md:text-5xl lg:text-6xl block mt-2">
             Je suis ingénieure : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
