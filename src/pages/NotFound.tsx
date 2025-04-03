@@ -1,5 +1,8 @@
+
+import React, { useEffect } from "react";
+import Layout from "@/components/Layout";
+import { Home } from "lucide-react";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,15 +15,24 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <Layout>
+      <div className="min-h-[80vh] flex items-center justify-center">
+        <div className="glass p-10 text-center max-w-md mx-auto">
+          <h1 className="text-6xl font-bold text-tech-light-blue mb-4">404</h1>
+          <p className="text-xl text-tech-lightest-slate mb-6">Oops! Page non trouvée</p>
+          <p className="text-tech-light-slate mb-8">
+            La page que vous recherchez semble ne pas exister ou a été déplacée.
+          </p>
+          <a 
+            href="/" 
+            className="inline-flex items-center bg-tech-light-blue text-tech-dark-blue hover:bg-tech-light-blue/90 font-medium px-6 py-3 rounded-md transition-all duration-300"
+          >
+            <Home size={18} className="mr-2" />
+            Retour à l'accueil
+          </a>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
