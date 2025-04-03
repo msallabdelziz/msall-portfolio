@@ -109,14 +109,14 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6">
         <p className="text-tech-light-blue mb-5 font-mono">Bonjour, je m'appelle</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight">
-          <span className="text-tech-lightest-slate block">Prénom Nom</span>
+          <span className="text-tech-lightest-slate block">Mamadou Abdel Aziz Sall</span>
           <span className="text-tech-slate text-3xl md:text-5xl lg:text-6xl block mt-2">
-            Développeur Full Stack
+            Développeur Web & Data Scientist
           </span>
         </h1>
         <p className="max-w-xl text-tech-light-slate text-lg mt-6">
-          Je crée des expériences web innovantes et centrées sur l'utilisateur. 
-          Spécialisé dans le développement d'applications web robustes et performantes.
+          Je crée des expériences web innovantes et analyse des données complexes. 
+          Spécialisé dans le développement d'applications web robustes et l'exploration de solutions data-driven.
         </p>
         <div className="mt-10">
           <a 
