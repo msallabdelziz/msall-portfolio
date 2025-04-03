@@ -5,7 +5,13 @@ import { ArrowRight } from 'lucide-react';
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [displayText, setDisplayText] = useState('');
+  const [jobTitle, setJobTitle] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+  
   const fullName = 'Mamadou Abdel Aziz Sall';
+  const jobTitles = ['Data Science et IA', 'Developpeur Web'];
   
   useEffect(() => {
     let index = 0;
@@ -20,6 +26,32 @@ const Hero: React.FC = () => {
     
     return () => clearInterval(interval);
   }, []);
+  
+  useEffect(() => {
+    const ticker = setTimeout(() => {
+      const i = loopNum % jobTitles.length;
+      const fullText = jobTitles[i];
+      
+      setJobTitle(isDeleting 
+        ? fullText.substring(0, jobTitle.length - 1) 
+        : fullText.substring(0, jobTitle.length + 1)
+      );
+      
+      setTypingSpeed(isDeleting ? 75 : 150);
+      
+      if (!isDeleting && jobTitle === fullText) {
+        // Pause at the end of typing
+        setTypingSpeed(2000);
+        setIsDeleting(true);
+      } else if (isDeleting && jobTitle === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setTypingSpeed(500);
+      }
+    }, typingSpeed);
+    
+    return () => clearTimeout(ticker);
+  }, [jobTitle, isDeleting, loopNum, typingSpeed, jobTitles]);
   
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -130,7 +162,7 @@ const Hero: React.FC = () => {
             <span className="text-tech-light-blue animate-pulse">|</span>
           </span>
           <span className="text-tech-slate text-3xl md:text-5xl lg:text-6xl block mt-2">
-            Développeur Web & Data Scientist
+            Je suis ingénieure : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
           </span>
         </h1>
         <p className="max-w-xl text-tech-light-slate text-lg mt-6">
