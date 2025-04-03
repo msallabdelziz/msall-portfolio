@@ -92,3 +92,25 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Wavy text animation */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+}
+
+.wavy-text span {
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
+}
+

@@ -141,14 +141,12 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6">
         <p className="text-tech-light-blue mb-5 font-mono">Bonjour, je m'appelle</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight">
-          <span className="text-tech-lightest-slate block h-[1.25em]">
+          <span className="text-tech-lightest-slate block h-[1.25em] wavy-text">
             {fullName.split('').map((char, index) => (
               <span 
                 key={index}
-                className="inline-block"
                 style={{
-                  animation: `float 3s ease-in-out infinite`,
-                  animationDelay: `${index * 0.1}s`
+                  animationDelay: `${index * 0.2}s`
                 }}
               >
                 {char === ' ' ? '\u00A0' : char}
