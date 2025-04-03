@@ -1,9 +1,25 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [displayText, setDisplayText] = useState('');
+  const fullName = 'Mamadou Abdel Aziz Sall';
+  
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index <= fullName.length) {
+        setDisplayText(fullName.substring(0, index));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 100);
+    
+    return () => clearInterval(interval);
+  }, []);
   
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -109,7 +125,10 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6">
         <p className="text-tech-light-blue mb-5 font-mono">Bonjour, je m'appelle</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight">
-          <span className="text-tech-lightest-slate block">Mamadou Abdel Aziz Sall</span>
+          <span className="text-tech-lightest-slate block h-[1.25em]">
+            {displayText}
+            <span className="text-tech-light-blue animate-pulse">|</span>
+          </span>
           <span className="text-tech-slate text-3xl md:text-5xl lg:text-6xl block mt-2">
             Développeur Web & Data Scientist
           </span>
