@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Code, LineChart, Globe } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero: React.FC = () => {
@@ -10,12 +10,16 @@ const Hero: React.FC = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
   const fullName = 'Mamadou Abdel Aziz Sall';
-  const jobTitles = ['Data Scientist', 'Developpeur IA', 'Developpeur Web'];
+  const jobTitles = [
+    { title: 'Data Scientist', icon: LineChart },
+    { title: 'Developpeur IA', icon: Code },
+    { title: 'Developpeur Web', icon: Globe }
+  ];
 
   useEffect(() => {
     const ticker = setTimeout(() => {
       const i = loopNum % jobTitles.length;
-      const fullText = jobTitles[i];
+      const fullText = jobTitles[i].title;
       setJobTitle(isDeleting ? fullText.substring(0, jobTitle.length - 1) : fullText.substring(0, jobTitle.length + 1));
       setTypingSpeed(isDeleting ? 75 : 150);
       if (!isDeleting && jobTitle === fullText) {
@@ -120,7 +124,14 @@ const Hero: React.FC = () => {
               {fullName} <span className="ml-2">🦦</span>
             </h1>
             <span className="text-tech-slate text-lg md:text-2xl lg:text-3xl block mt-2 whitespace-nowrap">
-              <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
+              <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">
+                {jobTitle}<span className="animate-pulse">|</span>
+                {jobTitle && jobTitle === jobTitles[loopNum % jobTitles.length].title && (
+                  <span className="ml-2 inline-flex items-center">
+                    {React.createElement(jobTitles[loopNum % jobTitles.length].icon, { size: 20 })}
+                  </span>
+                )}
+              </span>
             </span>
             
             <div className="mt-10 md:flex md:justify-end">
@@ -144,4 +155,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-
