@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Code, LineChart, Globe } from 'lucide-react';
+import { ArrowRight, Code, LineChart, Globe, ChevronDown } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero: React.FC = () => {
@@ -114,6 +113,10 @@ const Hero: React.FC = () => {
     };
   }, []);
 
+  const scrollToAbout = () => {
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return <section className="relative min-h-screen flex items-center py-32 overflow-hidden" id="home">
       <canvas ref={canvasRef} className="absolute inset-0 -z-[5]" />
       <div className="container mx-auto px-6">
@@ -150,6 +153,11 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+      
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer" onClick={scrollToAbout}>
+        <span className="text-tech-light-blue text-xs mb-2 font-mono">Scroll</span>
+        <ChevronDown className="text-tech-light-blue" size={24} />
       </div>
     </section>;
 };
