@@ -114,7 +114,9 @@ const Hero: React.FC = () => {
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 leading-tight text-tech-lightest-slate whitespace-nowrap">
               {fullName} <span className="ml-2">🦦</span>
             </h1>
-            
+            <span className="text-tech-slate text-lg md:text-2xl lg:text-3xl block mt-2 whitespace-nowrap">
+              Je suis : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
+            </span>
             
             <div className="mt-10">
               <a href="#projects" className="group flex items-center w-fit bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue font-medium px-6 py-3 border border-tech-light-blue rounded-md transition-all duration-300">
