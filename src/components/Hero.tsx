@@ -1,5 +1,6 @@
+
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Code, LineChart, Globe, ChevronDown } from 'lucide-react';
+import { ArrowRight, Code, LineChart, Globe, ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero: React.FC = () => {
@@ -138,10 +139,17 @@ const Hero: React.FC = () => {
             </span>
             
             <div className="mt-10 md:flex md:justify-end">
-              <a href="#projects" className="group flex items-center w-fit bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue font-medium px-6 py-3 border border-tech-light-blue rounded-md transition-all duration-300">
-                Voir mes projets
-                <ArrowRight size={18} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              <div className="flex items-center space-x-4">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
+                  <Github size={20} className="transition-transform duration-300 group-hover:scale-110" />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
+                  <Linkedin size={20} className="transition-transform duration-300 group-hover:scale-110" />
+                </a>
+                <a href="mailto:contact@example.com" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
+                  <Mail size={20} className="transition-transform duration-300 group-hover:scale-110" />
+                </a>
+              </div>
             </div>
           </div>
           <div className="md:w-4/12 mb-8 md:mb-0">
