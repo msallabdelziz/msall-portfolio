@@ -1,5 +1,7 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -138,24 +140,41 @@ const Hero: React.FC = () => {
         className="absolute inset-0 -z-[5]"
       />
       <div className="container mx-auto px-6">
-        <p className="text-tech-light-blue mb-5 font-mono">Bonjour, je m'appelle</p>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight">
-          <span className="text-tech-slate text-2xl md:text-4xl lg:text-5xl block mt-2">
-            Je suis ingénieure : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
-          </span>
-        </h1>
-        <p className="max-w-xl text-tech-light-slate text-lg mt-6">
-          Je crée des expériences web innovantes et analyse des données complexes. 
-          Spécialisé dans le développement d'applications web robustes et l'exploration de solutions data-driven.
-        </p>
-        <div className="mt-10">
-          <a 
-            href="#projects" 
-            className="group flex items-center w-fit bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue font-medium px-6 py-3 border border-tech-light-blue rounded-md transition-all duration-300"
-          >
-            Voir mes projets
-            <ArrowRight size={18} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+        <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
+          <div className="md:w-7/12 py-6">
+            <p className="text-tech-light-blue mb-5 font-mono">Bonjour, je m'appelle</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight text-tech-lightest-slate">
+              {fullName}
+            </h1>
+            <span className="text-tech-slate text-2xl md:text-4xl lg:text-5xl block mt-2">
+              Je suis ingénieure : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
+            </span>
+            <p className="max-w-xl text-tech-light-slate text-lg mt-6">
+              Je crée des expériences web innovantes et analyse des données complexes. 
+              Spécialisé dans le développement d'applications web robustes et l'exploration de solutions data-driven.
+            </p>
+            <div className="mt-10">
+              <a 
+                href="#projects" 
+                className="group flex items-center w-fit bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue font-medium px-6 py-3 border border-tech-light-blue rounded-md transition-all duration-300"
+              >
+                Voir mes projets
+                <ArrowRight size={18} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+            </div>
+          </div>
+          <div className="md:w-4/12 mb-8 md:mb-0">
+            <div className="relative mx-auto w-[250px] h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px]">
+              <div className="absolute inset-0 rounded-md border-2 border-tech-light-blue transform rotate-3 z-[-1] transition-all duration-300 hover:rotate-6"></div>
+              <div className="w-full h-full rounded-md overflow-hidden">
+                <img 
+                  src="/lovable-uploads/d3f53d9e-cbdb-4ab5-9944-cc63f4e4cfd1.png" 
+                  alt="Mamadou Abdel Aziz Sall" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
