@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -119,7 +120,7 @@ const Hero: React.FC = () => {
               {fullName} <span className="ml-2">🦦</span>
             </h1>
             <span className="text-tech-slate text-lg md:text-2xl lg:text-3xl block mt-2 whitespace-nowrap">
-              Je suis : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
+              <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
             </span>
             
             <div className="mt-10 md:flex md:justify-end">
@@ -143,3 +144,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+
