@@ -24,7 +24,6 @@ const Hero: React.FC = () => {
       setTypingSpeed(isDeleting ? 75 : 150);
       
       if (!isDeleting && jobTitle === fullText) {
-        // Pause at the end of typing
         setTypingSpeed(2000);
         setIsDeleting(true);
       } else if (isDeleting && jobTitle === '') {
@@ -141,13 +140,11 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6">
         <p className="text-tech-light-blue mb-5 font-mono">Bonjour, je m'appelle</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight">
-          <span className="text-tech-lightest-slate block h-[1.25em] wavy-text">
+          <span className="text-tech-lightest-slate block h-[1.25em]">
             {fullName.split('').map((char, index) => (
               <span 
                 key={index}
-                style={{
-                  animationDelay: `${index * 0.2}s`
-                }}
+                className="inline-block"
               >
                 {char === ' ' ? '\u00A0' : char}
               </span>
