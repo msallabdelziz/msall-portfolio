@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [jobTitle, setJobTitle] = useState('');
@@ -9,6 +10,7 @@ const Hero: React.FC = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
   const fullName = 'Mamadou Abdel Aziz Sall';
   const jobTitles = ['Data Scientist', 'Developpeur IA', 'Developpeur Web'];
+
   useEffect(() => {
     const ticker = setTimeout(() => {
       const i = loopNum % jobTitles.length;
@@ -26,6 +28,7 @@ const Hero: React.FC = () => {
     }, typingSpeed);
     return () => clearTimeout(ticker);
   }, [jobTitle, isDeleting, loopNum, typingSpeed, jobTitles]);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -105,6 +108,7 @@ const Hero: React.FC = () => {
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
+
   return <section className="relative min-h-screen flex items-center py-32 overflow-hidden" id="home">
       <canvas ref={canvasRef} className="absolute inset-0 -z-[5]" />
       <div className="container mx-auto px-6">
@@ -112,7 +116,7 @@ const Hero: React.FC = () => {
           <div className="md:w-7/12 py-6">
             <p className="text-tech-light-blue mb-5 font-mono">Salut, je suis</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight text-tech-lightest-slate">
-              {fullName}
+              {fullName} <span className="ml-2">🦦</span>
             </h1>
             <span className="text-tech-slate text-xl md:text-3xl lg:text-4xl block mt-2">
               Je suis : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
@@ -140,4 +144,5 @@ const Hero: React.FC = () => {
       </div>
     </section>;
 };
+
 export default Hero;
