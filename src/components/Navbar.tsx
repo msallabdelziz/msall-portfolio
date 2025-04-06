@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#" className="text-2xl font-bold text-tech-light-blue font-poppins">
-          MsallAbdelAZIZ<span className="text-tech-lightest-slate">.</span>
+          Msall🦦AbdelAZIZ<span className="text-tech-lightest-slate">.</span>
         </a>
 
         {/* Desktop Menu */}
