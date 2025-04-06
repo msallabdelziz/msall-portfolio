@@ -10,9 +10,9 @@ const Hero: React.FC = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
   const fullName = 'Mamadou Abdel Aziz Sall';
   const jobTitles = [
-    { title: 'Data Scientist', icon: LineChart },
-    { title: 'Developpeur IA', icon: Code },
-    { title: 'Developpeur Web', icon: Globe }
+    {icon: Code, title: 'IA Lover'},
+    {icon: LineChart, title: 'Data Scientist'},
+    {icon: Globe, title: 'Developpeur Web'}
   ];
 
   useEffect(() => {
