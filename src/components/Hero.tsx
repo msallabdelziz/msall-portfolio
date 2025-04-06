@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [jobTitle, setJobTitle] = useState('');
@@ -9,6 +10,7 @@ const Hero: React.FC = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
   const fullName = 'Mamadou Abdel Aziz Sall';
   const jobTitles = ['Data Scientist', 'Developpeur IA', 'Developpeur Web'];
+
   useEffect(() => {
     const ticker = setTimeout(() => {
       const i = loopNum % jobTitles.length;
@@ -26,6 +28,7 @@ const Hero: React.FC = () => {
     }, typingSpeed);
     return () => clearTimeout(ticker);
   }, [jobTitle, isDeleting, loopNum, typingSpeed, jobTitles]);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -105,11 +108,12 @@ const Hero: React.FC = () => {
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
+
   return <section className="relative min-h-screen flex items-center py-32 overflow-hidden" id="home">
       <canvas ref={canvasRef} className="absolute inset-0 -z-[5]" />
       <div className="container mx-auto px-6">
         <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
-          <div className="md:w-7/12 py-6">
+          <div className="md:w-7/12 py-6 md:text-right lg:text-right">
             <p className="text-tech-light-blue mb-5 font-mono">Salut, je suis</p>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 leading-tight text-tech-lightest-slate whitespace-nowrap">
               {fullName} <span className="ml-2">🦦</span>
@@ -118,7 +122,7 @@ const Hero: React.FC = () => {
               Je suis : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
             </span>
             
-            <div className="mt-10">
+            <div className="mt-10 md:flex md:justify-end">
               <a href="#projects" className="group flex items-center w-fit bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue font-medium px-6 py-3 border border-tech-light-blue rounded-md transition-all duration-300">
                 Voir mes projets
                 <ArrowRight size={18} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
@@ -137,4 +141,5 @@ const Hero: React.FC = () => {
       </div>
     </section>;
 };
+
 export default Hero;
