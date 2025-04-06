@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -143,10 +142,10 @@ const Hero: React.FC = () => {
         <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
           <div className="md:w-7/12 py-6">
             <p className="text-tech-light-blue mb-5 font-mono">Bonjour, je m'appelle</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight text-tech-lightest-slate">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight text-tech-lightest-slate">
               {fullName}
             </h1>
-            <span className="text-tech-slate text-2xl md:text-4xl lg:text-5xl block mt-2">
+            <span className="text-tech-slate text-xl md:text-3xl lg:text-4xl block mt-2">
               Je suis ingénieure : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
             </span>
             <p className="max-w-xl text-tech-light-slate text-lg mt-6">
