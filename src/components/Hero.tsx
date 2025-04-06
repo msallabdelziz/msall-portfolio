@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
   
   const fullName = 'Mamadou Abdel Aziz Sall';
-  const jobTitles = ['Data Science et IA', 'Developpeur Web'];
+  const jobTitles = ['Data Scientist','Developpeur IA', 'Developpeur Web'];
   
   useEffect(() => {
     const ticker = setTimeout(() => {
@@ -146,7 +146,7 @@ const Hero: React.FC = () => {
               {fullName}
             </h1>
             <span className="text-tech-slate text-xl md:text-3xl lg:text-4xl block mt-2">
-              Je suis ingénieure : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
+              Je suis : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
             </span>
             <p className="max-w-xl text-tech-light-slate text-lg mt-6">
               Je crée des expériences web innovantes et analyse des données complexes. 
