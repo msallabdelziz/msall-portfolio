@@ -140,17 +140,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6">
         <p className="text-tech-light-blue mb-5 font-mono">Bonjour, je m'appelle</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight">
-          <span className="text-tech-lightest-slate block h-[1.25em]">
-            {fullName.split('').map((char, index) => (
-              <span 
-                key={index}
-                className="inline-block"
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </span>
-            ))}
-          </span>
-          <span className="text-tech-slate text-3xl md:text-5xl lg:text-6xl block mt-2">
+          <span className="text-tech-slate text-2xl md:text-4xl lg:text-5xl block mt-2">
             Je suis ingénieure : <span className="text-tech-light-blue h-[1.2em] inline-block min-w-[2ch]">{jobTitle}<span className="animate-pulse">|</span></span>
           </span>
         </h1>
