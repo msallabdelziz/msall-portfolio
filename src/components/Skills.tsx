@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, Cpu, BarChart2, PieChart2 } from 'lucide-react';
+import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, Cpu, BarChart2, PieChart as PieChartIcon, Java, Php, TypeScript, Disc } from 'lucide-react';
 
 type Skill = {
   name: string;
@@ -61,10 +61,25 @@ const skillsData: Skill[] = [
     category: "Front & Back End",
     icon: <Code className="text-tech-light-blue" size={18} />
   }, {
+    name: "TypeScript",
+    level: 78,
+    category: "Front & Back End",
+    icon: <TypeScript className="text-tech-light-blue" size={18} />
+  }, {
+    name: "NodeJS",
+    level: 82,
+    category: "Front & Back End",
+    icon: <Server className="text-tech-light-blue" size={18} />
+  }, {
     name: "React",
     level: 75,
     category: "Front & Back End",
     icon: <LayoutDashboard className="text-tech-light-blue" size={18} />
+  }, {
+    name: "PHP",
+    level: 70,
+    category: "Front & Back End",
+    icon: <Php className="text-tech-light-blue" size={18} />
   }, {
     name: "MongoDB",
     level: 75,
@@ -75,6 +90,11 @@ const skillsData: Skill[] = [
     level: 70,
     category: "Front & Back End",
     icon: <Database className="text-tech-light-blue" size={18} />
+  }, {
+    name: "JAVA",
+    level: 65,
+    category: "Front & Back End",
+    icon: <Java className="text-tech-light-blue" size={18} />
   },
   
   // Cloud & DevOps
@@ -102,7 +122,7 @@ const categoryData = [
     value: 8
   }, {
     name: "Front & Back End",
-    value: 4
+    value: 8
   }, {
     name: "Cloud & DevOps",
     value: 3
