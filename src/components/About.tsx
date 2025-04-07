@@ -128,17 +128,17 @@ const About: React.FC = () => {
 
       {/* Image modal dialog */}
       <Dialog open={imageOpen} onOpenChange={setImageOpen}>
-        <DialogContent className="sm:max-w-[90vw] md:max-w-[80vw] max-h-[90vh] p-0 bg-tech-navy border-tech-light-blue overflow-hidden">
-          <div className="relative w-full h-full flex items-center justify-center">
-            <DialogClose className="absolute right-4 top-4 z-10 rounded-full bg-tech-navy/80 p-2 text-tech-light-blue hover:bg-tech-navy hover:text-white transition-colors">
-              <X className="h-6 w-6" />
+        <DialogContent className="p-0 bg-tech-navy border-tech-light-blue overflow-hidden">
+          <div className="relative flex items-center justify-center">
+            <DialogClose className="absolute right-2 top-2 z-10 rounded-full bg-tech-navy/80 p-2 text-tech-light-blue hover:bg-tech-navy hover:text-white transition-colors">
+              <X className="h-5 w-5" />
               <span className="sr-only">Close</span>
             </DialogClose>
-            <div className="w-full h-full flex items-center justify-center p-4">
+            <div className="flex items-center justify-center">
               <img 
                 src="/lovable-uploads/1c335152-00f5-452e-88df-fb2ba6bcbb54.png" 
                 alt="Mamadou Abdel Aziz Sall" 
-                className="max-w-full max-h-[80vh] object-contain"
+                className="w-auto h-auto object-contain"
               />
             </div>
           </div>
