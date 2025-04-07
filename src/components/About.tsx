@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Award, Book, Briefcase, Code, Globe, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
@@ -51,25 +50,6 @@ const About: React.FC = () => {
               <p className="mb-6 text-tech-light-slate">
                 Avec plusieurs projets professionnels et personnels, j'ai pu appliquer mes compétences académiques en IA, DATA et Programmation pour développer des solutions innovantes qui transforment des données complexes en insights stratégiques, optimisent des processus et relèvent des défis technologiques concrets, en alliant rigueur scientifique et créativité technique.
               </p>
-              
-              <div className="space-y-4">
-                <h3 className="font-medium text-tech-lightest-slate flex items-center mb-2">
-                  <Code size={18} className="mr-2 text-tech-light-blue" /> Compétences techniques
-                </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2">
-                  {[
-                    "Python", "R", "JavaScript", "React", "Node.js",
-                    "Machine Learning", "Deep Learning", "NLP", 
-                    "TensorFlow", "PyTorch", "Scikit-Learn",
-                    "MongoDB", "PostgreSQL", "Docker", "AWS"
-                  ].map((tech, index) => (
-                    <div key={index} className="flex items-start">
-                      <span className="text-tech-light-blue mr-2">▹</span>
-                      <span className="text-tech-light-slate">{tech}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
               <div className="mt-6 space-y-4">
                 <h3 className="font-medium text-tech-lightest-slate flex items-center mb-2">
