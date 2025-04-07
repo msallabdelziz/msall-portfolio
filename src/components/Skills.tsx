@@ -1,11 +1,9 @@
-
 import React, { useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, Cpu, BarChart2, PieChart as PieChartIcon, FileCode, Coffee, Brackets } from 'lucide-react';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee } from 'lucide-react';
 
 type Skill = {
   name: string;
-  level: number;
   category: string;
   icon: React.ReactNode;
 };
@@ -14,105 +12,86 @@ const skillsData: Skill[] = [
   // DATA & IA
   {
     name: "Python",
-    level: 95,
     category: "DATA & IA",
-    icon: <Code className="text-tech-light-blue" size={18} />
+    icon: <Code className="text-tech-light-blue" size={24} />
   }, {
     name: "Machine Learning",
-    level: 90,
     category: "DATA & IA",
-    icon: <Settings className="text-tech-light-blue" size={18} />
+    icon: <Settings className="text-tech-light-blue" size={24} />
   }, {
     name: "Deep Learning",
-    level: 85,
     category: "DATA & IA",
-    icon: <Settings className="text-tech-light-blue" size={18} />
+    icon: <Settings className="text-tech-light-blue" size={24} />
   }, {
     name: "NLP",
-    level: 80,
     category: "DATA & IA",
-    icon: <Settings className="text-tech-light-blue" size={18} />
+    icon: <Terminal className="text-tech-light-blue" size={24} />
   }, {
     name: "TensorFlow",
-    level: 85,
     category: "DATA & IA",
-    icon: <Wrench className="text-tech-light-blue" size={18} />
+    icon: <Wrench className="text-tech-light-blue" size={24} />
   }, {
     name: "PyTorch",
-    level: 85,
     category: "DATA & IA",
-    icon: <Wrench className="text-tech-light-blue" size={18} />
+    icon: <Wrench className="text-tech-light-blue" size={24} />
   }, {
     name: "Scikit-Learn",
-    level: 90,
     category: "DATA & IA",
-    icon: <Wrench className="text-tech-light-blue" size={18} />
+    icon: <Wrench className="text-tech-light-blue" size={24} />
   }, {
     name: "R",
-    level: 85,
     category: "DATA & IA",
-    icon: <BarChart2 className="text-tech-light-blue" size={18} />
+    icon: <BarChart2 className="text-tech-light-blue" size={24} />
   },
   
   // Front & Back End
   {
     name: "JavaScript",
-    level: 80,
     category: "Front & Back End",
-    icon: <Code className="text-tech-light-blue" size={18} />
+    icon: <Code className="text-tech-light-blue" size={24} />
   }, {
     name: "TypeScript",
-    level: 78,
     category: "Front & Back End",
-    icon: <FileCode className="text-tech-light-blue" size={18} />
+    icon: <FileCode className="text-tech-light-blue" size={24} />
   }, {
     name: "NodeJS",
-    level: 82,
     category: "Front & Back End",
-    icon: <Server className="text-tech-light-blue" size={18} />
+    icon: <Server className="text-tech-light-blue" size={24} />
   }, {
     name: "React",
-    level: 75,
     category: "Front & Back End",
-    icon: <LayoutDashboard className="text-tech-light-blue" size={18} />
+    icon: <LayoutDashboard className="text-tech-light-blue" size={24} />
   }, {
     name: "PHP",
-    level: 70,
     category: "Front & Back End",
-    icon: <Code className="text-tech-light-blue" size={18} />
+    icon: <Code className="text-tech-light-blue" size={24} />
   }, {
     name: "MongoDB",
-    level: 75,
     category: "Front & Back End",
-    icon: <Database className="text-tech-light-blue" size={18} />
+    icon: <Database className="text-tech-light-blue" size={24} />
   }, {
     name: "PostgreSQL",
-    level: 70,
     category: "Front & Back End",
-    icon: <Database className="text-tech-light-blue" size={18} />
+    icon: <Database className="text-tech-light-blue" size={24} />
   }, {
     name: "JAVA",
-    level: 65,
     category: "Front & Back End",
-    icon: <Coffee className="text-tech-light-blue" size={18} />
+    icon: <Coffee className="text-tech-light-blue" size={24} />
   },
   
   // Cloud & DevOps
   {
     name: "Docker",
-    level: 75,
     category: "Cloud & DevOps",
-    icon: <Server className="text-tech-light-blue" size={18} />
+    icon: <Server className="text-tech-light-blue" size={24} />
   }, {
     name: "AWS",
-    level: 65,
     category: "Cloud & DevOps",
-    icon: <Cloud className="text-tech-light-blue" size={18} />
+    icon: <Cloud className="text-tech-light-blue" size={24} />
   }, {
     name: "Terminal",
-    level: 85,
     category: "Cloud & DevOps",
-    icon: <Terminal className="text-tech-light-blue" size={18} />
+    icon: <Terminal className="text-tech-light-blue" size={24} />
   }
 ];
 
@@ -130,20 +109,6 @@ const categoryData = [
 ];
 
 const COLORS = ['#64ffda', '#38bdf8', '#818cf8', '#6ee7b7', '#f472b6', '#fbbf24', '#fb923c'];
-
-const CustomTooltip = ({
-  active,
-  payload,
-  label
-}: any) => {
-  if (active && payload && payload.length) {
-    return <div className="glass p-2 text-sm">
-        <p className="font-semibold">{label}</p>
-        <p className="text-tech-light-blue">{`Niveau: ${payload[0].value}%`}</p>
-      </div>;
-  }
-  return null;
-};
 
 const PieCustomTooltip = ({
   active,
@@ -189,12 +154,19 @@ const Skills: React.FC = () => {
             <div className="h-64 flex items-center justify-center">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={categoryData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5} dataKey="value" animationDuration={1500} label={({
-                  name
-                }) => name} labelLine={{
-                  stroke: '#64ffda',
-                  strokeWidth: 1
-                }}>
+                  <Pie 
+                    data={categoryData} 
+                    cx="50%" 
+                    cy="50%" 
+                    innerRadius={60} 
+                    outerRadius={80} 
+                    fill="#8884d8" 
+                    paddingAngle={5} 
+                    dataKey="value" 
+                    animationDuration={1500} 
+                    label={({name}) => name} 
+                    labelLine={{stroke: '#64ffda', strokeWidth: 1}}
+                  >
                     {categoryData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
                   </Pie>
                   <Tooltip content={<PieCustomTooltip />} />
@@ -225,14 +197,8 @@ const Skills: React.FC = () => {
                   .filter(skill => skill.category === category)
                   .map((skill, index) => (
                     <div key={index} className="glass p-4 flex flex-col items-center text-center transition-transform hover:scale-105">
-                      <div className="mb-2">{skill.icon}</div>
+                      <div className="mb-3 text-tech-light-blue">{skill.icon}</div>
                       <h4 className="font-medium text-tech-lightest-slate">{skill.name}</h4>
-                      <div className="mt-2 w-full bg-tech-light-navy rounded-full h-2">
-                        <div className="bg-tech-light-blue h-2 rounded-full" style={{
-                          width: `${skill.level}%`
-                        }}></div>
-                      </div>
-                      <span className="text-xs mt-1 text-tech-light-blue">{skill.level}%</span>
                     </div>
                   ))}
               </div>
