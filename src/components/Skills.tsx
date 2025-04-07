@@ -12,36 +12,52 @@ import {
   Pie,
   Cell
 } from 'recharts';
+import { 
+  Code, 
+  Database, 
+  LayoutDashboard, 
+  Server, 
+  Settings, 
+  Terminal, 
+  Wrench 
+} from 'lucide-react';
 
 type Skill = {
   name: string;
   level: number;
   category: string;
+  icon: React.ReactNode;
 };
 
 const skillsData: Skill[] = [
-  { name: "React", level: 90, category: "Frontend" },
-  { name: "JavaScript", level: 85, category: "Frontend" },
-  { name: "TypeScript", level: 80, category: "Frontend" },
-  { name: "Node.js", level: 75, category: "Backend" },
-  { name: "Express", level: 80, category: "Backend" },
-  { name: "MongoDB", level: 70, category: "Backend" },
-  { name: "PostgreSQL", level: 65, category: "Backend" },
-  { name: "HTML/CSS", level: 90, category: "Frontend" },
-  { name: "TailwindCSS", level: 85, category: "Frontend" },
-  { name: "Git", level: 80, category: "Tools" },
-  { name: "Docker", level: 60, category: "DevOps" },
-  { name: "AWS", level: 50, category: "DevOps" },
+  { name: "Python", level: 95, category: "Programming", icon: <Code className="text-tech-light-blue" size={18} /> },
+  { name: "R", level: 85, category: "Programming", icon: <Code className="text-tech-light-blue" size={18} /> },
+  { name: "JavaScript", level: 80, category: "Programming", icon: <Code className="text-tech-light-blue" size={18} /> },
+  { name: "React", level: 75, category: "Frontend", icon: <LayoutDashboard className="text-tech-light-blue" size={18} /> },
+  { name: "Machine Learning", level: 90, category: "AI", icon: <Settings className="text-tech-light-blue" size={18} /> },
+  { name: "Deep Learning", level: 85, category: "AI", icon: <Settings className="text-tech-light-blue" size={18} /> },
+  { name: "NLP", level: 80, category: "AI", icon: <Settings className="text-tech-light-blue" size={18} /> },
+  { name: "TensorFlow", level: 85, category: "Frameworks", icon: <Wrench className="text-tech-light-blue" size={18} /> },
+  { name: "PyTorch", level: 85, category: "Frameworks", icon: <Wrench className="text-tech-light-blue" size={18} /> },
+  { name: "Scikit-Learn", level: 90, category: "Frameworks", icon: <Wrench className="text-tech-light-blue" size={18} /> },
+  { name: "MongoDB", level: 75, category: "Databases", icon: <Database className="text-tech-light-blue" size={18} /> },
+  { name: "PostgreSQL", level: 70, category: "Databases", icon: <Database className="text-tech-light-blue" size={18} /> },
+  { name: "Docker", level: 75, category: "DevOps", icon: <Server className="text-tech-light-blue" size={18} /> },
+  { name: "AWS", level: 65, category: "DevOps", icon: <Server className="text-tech-light-blue" size={18} /> },
+  { name: "Terminal", level: 85, category: "Tools", icon: <Terminal className="text-tech-light-blue" size={18} /> },
 ];
 
 const categoryData = [
-  { name: "Frontend", value: 5 },
-  { name: "Backend", value: 4 },
+  { name: "Programming", value: 3 },
+  { name: "AI", value: 3 },
+  { name: "Frameworks", value: 3 },
+  { name: "Databases", value: 2 },
   { name: "DevOps", value: 2 },
+  { name: "Frontend", value: 1 },
   { name: "Tools", value: 1 },
 ];
 
-const COLORS = ['#64ffda', '#38bdf8', '#818cf8', '#6ee7b7'];
+const COLORS = ['#64ffda', '#38bdf8', '#818cf8', '#6ee7b7', '#f472b6', '#fbbf24', '#fb923c'];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
@@ -174,6 +190,25 @@ const Skills: React.FC = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+        
+        <div className="mt-12 glass p-6 reveal">
+          <h3 className="text-xl font-semibold mb-6 text-center text-tech-lightest-slate">Liste des compétences</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {skillsData.map((skill, index) => (
+              <div key={index} className="glass p-4 flex flex-col items-center text-center transition-transform hover:scale-105">
+                <div className="mb-2">{skill.icon}</div>
+                <h4 className="font-medium text-tech-lightest-slate">{skill.name}</h4>
+                <div className="mt-2 w-full bg-tech-light-navy rounded-full h-2">
+                  <div 
+                    className="bg-tech-light-blue h-2 rounded-full" 
+                    style={{ width: `${skill.level}%` }}
+                  ></div>
+                </div>
+                <span className="text-xs mt-1 text-tech-light-blue">{skill.level}%</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
