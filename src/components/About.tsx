@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react';
-import { Award, Book, Briefcase, Code, Globe } from 'lucide-react';
+
+import React, { useEffect, useState } from 'react';
+import { Award, Book, Briefcase, Code, Globe, X } from 'lucide-react';
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 
 const About: React.FC = () => {
+  const [imageOpen, setImageOpen] = useState<boolean>(false);
+  
   // Reveal animation on scroll
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
@@ -105,7 +109,10 @@ const About: React.FC = () => {
             <div className="md:col-span-2 reveal">
               <div className="relative group">
                 <div className="absolute -inset-2 rounded-lg bg-tech-light-blue/20 opacity-75 blur group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative border-2 border-tech-light-blue rounded-lg overflow-hidden aspect-square">
+                <div 
+                  className="relative border-2 border-tech-light-blue rounded-lg overflow-hidden aspect-square cursor-pointer"
+                  onClick={() => setImageOpen(true)}
+                >
                   <div className="absolute inset-0 bg-tech-light-blue/20 group-hover:bg-transparent transition duration-300 z-10"></div>
                   <img 
                     src="/lovable-uploads/1c335152-00f5-452e-88df-fb2ba6bcbb54.png" 
@@ -118,6 +125,25 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Image modal dialog */}
+      <Dialog open={imageOpen} onOpenChange={setImageOpen}>
+        <DialogContent className="sm:max-w-[80vw] max-h-[90vh] p-0 bg-tech-navy border-tech-light-blue">
+          <div className="relative w-full h-full">
+            <DialogClose className="absolute right-4 top-4 z-10 rounded-full bg-tech-navy/80 p-2 text-tech-light-blue hover:bg-tech-navy hover:text-white transition-colors">
+              <X className="h-6 w-6" />
+              <span className="sr-only">Close</span>
+            </DialogClose>
+            <div className="w-full h-full overflow-auto p-2">
+              <img 
+                src="/lovable-uploads/1c335152-00f5-452e-88df-fb2ba6bcbb54.png" 
+                alt="Mamadou Abdel Aziz Sall" 
+                className="w-full h-full object-contain mx-auto"
+              />
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
