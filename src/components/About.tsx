@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import { Award, Book, Briefcase, Code, Globe } from 'lucide-react';
 
 const About: React.FC = () => {
   // Reveal animation on scroll
@@ -37,31 +38,69 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-3 reveal">
               <p className="mb-4 text-tech-light-slate">
-                Bonjour ! Je m'appelle [Votre Nom] et je suis passionné par la création d'applications web innovantes. 
-                Mon parcours dans le développement a commencé en [année], et depuis, je me suis spécialisé dans [vos spécialités].
+                En phase finale de mon <span className="text-tech-light-blue">Master 2 en Data Science & IA</span> à IA SCHOOL (Lyon), 
+                je suis passionné par l'analyse des données et l'intelligence artificielle avec une bonne expérience en programmation.
               </p>
               <p className="mb-4 text-tech-light-slate">
-                Mon approche du développement est centrée sur la création de solutions élégantes et performantes, 
-                avec une attention particulière portée à l'expérience utilisateur et aux bonnes pratiques de développement.
+                Je recherche actuellement un <span className="text-tech-light-blue">stage de fin d'étude de 4 à 6 mois</span> pour appliquer mes compétences 
+                en IA, DATA, Programmation et gestion de projets Agile dans des projets innovants.
               </p>
               <p className="mb-6 text-tech-light-slate">
-                En dehors du code, je m'intéresse à [vos autres intérêts ou hobbies]. 
-                Ces activités m'aident à maintenir un équilibre et nourrissent ma créativité.
+                J'ai développé un agent conversationnel intelligent basé sur les LLM capable de diagnostiquer les patients 
+                et de les orienter vers les spécialistes concernés, projet pour lequel j'ai été finaliste du DATATHON IA SCHOOL 2025.
               </p>
               
-              <p className="text-tech-light-slate">
-                Voici quelques technologies avec lesquelles j'ai travaillé récemment :
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4">
-                {[
-                  "JavaScript (ES6+)", "TypeScript", "React", "Node.js", 
-                  "Express", "MongoDB", "PostgreSQL", "TailwindCSS"
-                ].map((tech, index) => (
-                  <div key={index} className="flex items-start">
+              <div className="space-y-4">
+                <h3 className="font-medium text-tech-lightest-slate flex items-center mb-2">
+                  <Code size={18} className="mr-2 text-tech-light-blue" /> Compétences techniques
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2">
+                  {[
+                    "Python", "R", "JavaScript", "React", "Node.js",
+                    "Machine Learning", "Deep Learning", "NLP", 
+                    "TensorFlow", "PyTorch", "Scikit-Learn",
+                    "MongoDB", "PostgreSQL", "Docker", "AWS"
+                  ].map((tech, index) => (
+                    <div key={index} className="flex items-start">
+                      <span className="text-tech-light-blue mr-2">▹</span>
+                      <span className="text-tech-light-slate">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-6 space-y-4">
+                <h3 className="font-medium text-tech-lightest-slate flex items-center mb-2">
+                  <Globe size={18} className="mr-2 text-tech-light-blue" /> Langues
+                </h3>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex items-center">
                     <span className="text-tech-light-blue mr-2">▹</span>
-                    <span className="text-tech-light-slate">{tech}</span>
+                    <span className="text-tech-light-slate">Français (C)</span>
                   </div>
-                ))}
+                  <div className="flex items-center">
+                    <span className="text-tech-light-blue mr-2">▹</span>
+                    <span className="text-tech-light-slate">Anglais (B2)</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-tech-light-blue mr-2">▹</span>
+                    <span className="text-tech-light-slate">Arabe (B)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 space-y-4">
+                <h3 className="font-medium text-tech-lightest-slate flex items-center mb-2">
+                  <Book size={18} className="mr-2 text-tech-light-blue" /> Centres d'intérêt
+                </h3>
+                <div className="grid grid-cols-2 gap-2">
+                  {["Sport", "Lecture", "Voyage", "Programmation"].map((interest, index) => (
+                    <div key={index} className="flex items-center">
+                      <span className="text-tech-light-blue mr-2">▹</span>
+                      <span className="text-tech-light-slate">{interest}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             
@@ -71,8 +110,8 @@ const About: React.FC = () => {
                 <div className="relative border-2 border-tech-light-blue rounded-lg overflow-hidden aspect-square">
                   <div className="absolute inset-0 bg-tech-light-blue/20 group-hover:bg-transparent transition duration-300 z-10"></div>
                   <img 
-                    src="https://via.placeholder.com/400x400" 
-                    alt="Photo de profil" 
+                    src="/lovable-uploads/1c335152-00f5-452e-88df-fb2ba6bcbb54.png" 
+                    alt="Mamadou Abdel Aziz Sall" 
                     className="w-full h-full object-cover"
                   />
                 </div>
