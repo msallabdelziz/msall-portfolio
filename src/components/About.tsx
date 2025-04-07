@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Award, Book, Briefcase, Code, Globe } from 'lucide-react';
 
@@ -46,8 +45,7 @@ const About: React.FC = () => {
                 en IA, DATA, Programmation et gestion de projets Agile dans des projets innovants.
               </p>
               <p className="mb-6 text-tech-light-slate">
-                J'ai développé un agent conversationnel intelligent basé sur les LLM capable de diagnostiquer les patients 
-                et de les orienter vers les spécialistes concernés, projet pour lequel j'ai été finaliste du DATATHON IA SCHOOL 2025.
+                Avec plusieurs projets professionnels et personnels, j'ai pu appliquer mes compétences académiques en IA, DATA et Programmation pour développer des solutions innovantes qui transforment des données complexes en insights stratégiques, optimisent des processus et relèvent des défis technologiques concrets, en alliant rigueur scientifique et créativité technique.
               </p>
               
               <div className="space-y-4">
