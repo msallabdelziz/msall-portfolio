@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench } from 'lucide-react';
-
 type Skill = {
   name: string;
   level: number;
   category: string;
   icon: React.ReactNode;
 };
-
 const skillsData: Skill[] = [{
   name: "Python",
   level: 95,
@@ -85,7 +83,6 @@ const skillsData: Skill[] = [{
   category: "Tools",
   icon: <Terminal className="text-tech-light-blue" size={18} />
 }];
-
 const categoryData = [{
   name: "Programming",
   value: 3
@@ -108,9 +105,7 @@ const categoryData = [{
   name: "Tools",
   value: 1
 }];
-
 const COLORS = ['#64ffda', '#38bdf8', '#818cf8', '#6ee7b7', '#f472b6', '#fbbf24', '#fb923c'];
-
 const CustomTooltip = ({
   active,
   payload,
@@ -124,7 +119,6 @@ const CustomTooltip = ({
   }
   return null;
 };
-
 const PieCustomTooltip = ({
   active,
   payload
@@ -137,8 +131,8 @@ const PieCustomTooltip = ({
   }
   return null;
 };
-
 const Skills: React.FC = () => {
+  // Reveal animation on scroll
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
     const reveal = () => {
@@ -151,10 +145,10 @@ const Skills: React.FC = () => {
       });
     };
     window.addEventListener('scroll', reveal);
+    // Initial check
     reveal();
     return () => window.removeEventListener('scroll', reveal);
   }, []);
-
   return <section id="skills" className="section-padding py-28 bg-tech-dark-blue/30">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-12 flex items-center reveal">
@@ -164,6 +158,7 @@ const Skills: React.FC = () => {
         </h2>
         
         <div className="grid md:grid-cols-3 gap-8">
+          
           
           <div className="glass p-6 reveal">
             <h3 className="text-xl font-semibold mb-6 text-center text-tech-lightest-slate">Répartition par domaine</h3>
@@ -192,25 +187,24 @@ const Skills: React.FC = () => {
                 </div>)}
             </div>
           </div>
-          
-          <div className="glass p-6 reveal w-full max-w-full mx-auto">
-            <h3 className="text-xl font-semibold mb-6 text-center text-tech-lightest-slate">Liste des compétences</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {skillsData.map((skill, index) => <div key={index} className="glass p-4 flex flex-col items-center text-center transition-transform hover:scale-105">
-                  <div className="mb-2">{skill.icon}</div>
-                  <h4 className="font-medium text-tech-lightest-slate">{skill.name}</h4>
-                  <div className="mt-2 w-full bg-tech-light-navy rounded-full h-2">
-                    <div className="bg-tech-light-blue h-2 rounded-full" style={{
-                  width: `${skill.level}%`
-                }}></div>
-                  </div>
-                  <span className="text-xs mt-1 text-tech-light-blue">{skill.level}%</span>
-                </div>)}
-            </div>
+        </div>
+        
+        <div className="mt-12 glass p-6 reveal">
+          <h3 className="text-xl font-semibold mb-6 text-center text-tech-lightest-slate">Liste des compétences</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {skillsData.map((skill, index) => <div key={index} className="glass p-4 flex flex-col items-center text-center transition-transform hover:scale-105">
+                <div className="mb-2">{skill.icon}</div>
+                <h4 className="font-medium text-tech-lightest-slate">{skill.name}</h4>
+                <div className="mt-2 w-full bg-tech-light-navy rounded-full h-2">
+                  <div className="bg-tech-light-blue h-2 rounded-full" style={{
+                width: `${skill.level}%`
+              }}></div>
+                </div>
+                <span className="text-xs mt-1 text-tech-light-blue">{skill.level}%</span>
+              </div>)}
           </div>
         </div>
       </div>
     </section>;
 };
-
 export default Skills;
