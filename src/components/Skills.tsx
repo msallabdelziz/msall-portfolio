@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, Cpu, BarChart2, PieChart as PieChartIcon, Java, Php, TypeScript, Disc } from 'lucide-react';
+import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, Cpu, BarChart2, PieChart as PieChartIcon, FileCode, Coffee, Brackets } from 'lucide-react';
 
 type Skill = {
   name: string;
@@ -64,7 +64,7 @@ const skillsData: Skill[] = [
     name: "TypeScript",
     level: 78,
     category: "Front & Back End",
-    icon: <TypeScript className="text-tech-light-blue" size={18} />
+    icon: <FileCode className="text-tech-light-blue" size={18} />
   }, {
     name: "NodeJS",
     level: 82,
@@ -79,7 +79,7 @@ const skillsData: Skill[] = [
     name: "PHP",
     level: 70,
     category: "Front & Back End",
-    icon: <Php className="text-tech-light-blue" size={18} />
+    icon: <Code className="text-tech-light-blue" size={18} />
   }, {
     name: "MongoDB",
     level: 75,
@@ -94,7 +94,7 @@ const skillsData: Skill[] = [
     name: "JAVA",
     level: 65,
     category: "Front & Back End",
-    icon: <Java className="text-tech-light-blue" size={18} />
+    icon: <Coffee className="text-tech-light-blue" size={18} />
   },
   
   // Cloud & DevOps
