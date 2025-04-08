@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -33,7 +34,19 @@ const experienceData: ExperienceItem[] = [
       "Développement Backend avec NodeJS, Symfony, Laravel et Frontend avec Angular, React JS",
       "Analyse des besoins, conception de l'architecture logicielle et intégration de bases de données"
     ],
-    technologies: ["React", "Angular", "Node.js", "Symfony", "Laravel", "JavaScript"]
+    technologies: ["React", "Angular", "Node.js", "Symfony", "JavaScript"]
+  },
+  {
+    id: 3,
+    title: "Développeur web / Stage",
+    company: "3W Agency - DAKAR",
+    period: "Novembre 2021 - Février 2022",
+    description: [
+      "Gestion de contenus et mise à jour du site Web ORIS-BANK",
+      "Évolution et maintenance de sites Internet des clients",
+      "Conception et Développement d'Api"
+    ],
+    technologies: ["Développement Web", "Gestion de contenus", "API", "Web maintenance"]
   }
 ];
 
