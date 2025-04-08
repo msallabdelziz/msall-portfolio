@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -6,7 +5,7 @@ type ExperienceItem = {
   id: number;
   title: string;
   company: string;
-  location: string;
+  location?: string;
   period: string;
   description: string[];
   technologies: string[];
@@ -15,45 +14,26 @@ type ExperienceItem = {
 const experienceData: ExperienceItem[] = [
   {
     id: 1,
-    title: "Développeur Full Stack",
-    company: "Société Innovative",
-    location: "Paris, France",
-    period: "Janvier 2022 - Présent",
+    title: "Consultant Junior IT et DATA",
+    company: "African Development Bank",
+    period: "08/2023 - 02/2024",
     description: [
-      "Développement d'applications web modernes avec React et Node.js",
-      "Implémentation de nouvelles fonctionnalités et maintenance des systèmes existants",
-      "Collaboration avec les équipes produit et design pour créer des expériences utilisateur exceptionnelles",
-      "Optimisation des performances et de la sécurité des applications"
+      "Archivage de données avec SANKOFA, gestion des infrastructures",
+      "Développement d'un chatbot pour l'extraction de données à partir de documents PDF - avec du Python, NLP et des modèles d'IA pour améliorer l'interactivité",
+      "Développement de solutions pour la gestion des stocks"
     ],
-    technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "AWS"]
+    technologies: ["Python", "NLP", "IA", "Chatbot", "Gestion de données"]
   },
   {
     id: 2,
-    title: "Développeur Front-end",
-    company: "WebStudio",
-    location: "Lyon, France",
-    period: "Mars 2020 - Décembre 2021",
+    title: "Développeur Web",
+    company: "KGM Consulting",
+    period: "03/2022 - 04/2023",
     description: [
-      "Création d'interfaces utilisateur réactives et accessibles",
-      "Intégration des conceptions UI/UX en collaboration étroite avec les designers",
-      "Amélioration de la performance des applications existantes",
-      "Participation aux revues de code et à l'amélioration continue des pratiques de développement"
+      "Développement Backend avec NodeJS, Symfony, Laravel et Frontend avec Angular, React JS",
+      "Analyse des besoins, conception de l'architecture logicielle et intégration de bases de données"
     ],
-    technologies: ["React", "Vue.js", "JavaScript", "SCSS", "Webpack"]
-  },
-  {
-    id: 3,
-    title: "Développeur Web Junior",
-    company: "StartupTech",
-    location: "Lille, France",
-    period: "Septembre 2018 - Février 2020",
-    description: [
-      "Développement et maintenance de sites web pour divers clients",
-      "Implémentation de designs responsive et optimisation pour mobile",
-      "Création et intégration de composants interactifs",
-      "Support technique et résolution de bugs"
-    ],
-    technologies: ["JavaScript", "HTML", "CSS", "WordPress", "PHP"]
+    technologies: ["React", "Angular", "Node.js", "Symfony", "Laravel", "JavaScript"]
   }
 ];
 
@@ -87,7 +67,7 @@ const Experience: React.FC = () => {
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-12 flex items-center reveal">
           <span className="number-heading">03.</span>
-          Expérience Professionnelle
+          Expériences Professionnelles
           <span className="h-[1px] bg-tech-light-navy ml-4 flex-grow"></span>
         </h2>
         
@@ -115,7 +95,9 @@ const Experience: React.FC = () => {
                 <h3 className="text-xl font-semibold text-tech-lightest-slate">
                   {experienceData[activeTab].title} <span className="text-tech-light-blue">@ {experienceData[activeTab].company}</span>
                 </h3>
-                <span className="text-tech-light-slate text-sm">{experienceData[activeTab].location}</span>
+                {experienceData[activeTab].location && (
+                  <span className="text-tech-light-slate text-sm">{experienceData[activeTab].location}</span>
+                )}
               </div>
               
               <p className="text-tech-light-slate text-sm mb-4 font-mono">{experienceData[activeTab].period}</p>
