@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar, Layers } from 'lucide-react';
+import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar, Layers, Smartphone } from 'lucide-react';
 
 type Skill = {
   name: string;
@@ -111,6 +111,13 @@ const skillsData: Skill[] = [
     icon: <Code className="text-tech-light-blue" size={24} />
   },
   
+  // Mobile
+  {
+    name: "Flutter",
+    category: "Mobile",
+    icon: <Smartphone className="text-tech-light-blue" size={24} />
+  },
+  
   // Cloud & DevOps
   {
     name: "Docker",
@@ -137,6 +144,9 @@ const categoryData = [
   }, {
     name: "FrontEnd & BackEnd",
     value: 8
+  }, {
+    name: "Mobile",
+    value: 1
   }, {
     name: "Cloud & DevOps",
     value: 3
@@ -209,7 +219,7 @@ const Skills: React.FC = () => {
               </ResponsiveContainer>
             </div>
             
-            <div className="mt-6 grid grid-cols-4 gap-2">
+            <div className="mt-6 grid grid-cols-5 gap-2">
               {categoryData.map((category, index) => <div key={index} className="flex items-center">
                   <div className="w-3 h-3 rounded-full mr-2" style={{
                 backgroundColor: COLORS[index % COLORS.length]
@@ -224,7 +234,7 @@ const Skills: React.FC = () => {
           <h3 className="text-xl font-semibold mb-6 text-center text-tech-lightest-slate">Liste des compétences</h3>
           
           {/* Group skills by category */}
-          {["Language", "DATA & IA", "FrontEnd & BackEnd", "Cloud & DevOps"].map((category, categoryIndex) => (
+          {["Language", "DATA & IA", "FrontEnd & BackEnd", "Mobile", "Cloud & DevOps"].map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-8">
               <h4 className="text-lg font-medium mb-4 text-tech-light-blue border-b border-tech-light-navy pb-2">{category}</h4>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
