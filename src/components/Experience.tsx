@@ -42,7 +42,7 @@ const experienceData: ExperienceItem[] = [
     company: "3W Agency - DAKAR",
     period: "Novembre 2021 - Février 2022",
     description: [
-      "Gestion de contenus et mise à jour du site Web ORIS-BANK",
+      "Gestion de contenus et mise à jour du site Web CORIS-BANK",
       "Évolution et maintenance de sites Internet des clients",
       "Conception et Développement d'Api"
     ],
