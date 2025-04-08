@@ -1,6 +1,7 @@
+
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar, Layers, Smartphone, GitBranch, GitMerge, GitLab } from 'lucide-react';
+import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar, Layers, Smartphone, GitBranch, GitMerge, Gitlab } from 'lucide-react';
 
 type Skill = {
   name: string;
@@ -136,7 +137,7 @@ const skillsData: Skill[] = [
   }, {
     name: "GitLab",
     category: "Cloud & DevOps",
-    icon: <GitLab className="text-tech-light-blue" size={24} />
+    icon: <Gitlab className="text-tech-light-blue" size={24} />
   }, {
     name: "Jira",
     category: "Cloud & DevOps",
