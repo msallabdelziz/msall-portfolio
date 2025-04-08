@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar } from 'lucide-react';
+import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar, Layers } from 'lucide-react';
 
 type Skill = {
   name: string;
@@ -93,6 +93,22 @@ const skillsData: Skill[] = [
     name: "PostgreSQL",
     category: "FrontEnd & BackEnd",
     icon: <Database className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Angular", 
+    category: "FrontEnd & BackEnd",
+    icon: <Layers className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Express",
+    category: "FrontEnd & BackEnd",
+    icon: <Server className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Symfony",
+    category: "FrontEnd & BackEnd",
+    icon: <Code className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Laravel",
+    category: "FrontEnd & BackEnd",
+    icon: <Code className="text-tech-light-blue" size={24} />
   },
   
   // Cloud & DevOps
@@ -120,7 +136,7 @@ const categoryData = [
     value: 9
   }, {
     name: "FrontEnd & BackEnd",
-    value: 4
+    value: 8
   }, {
     name: "Cloud & DevOps",
     value: 3
