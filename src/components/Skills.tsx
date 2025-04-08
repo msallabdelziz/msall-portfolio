@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee } from 'lucide-react';
@@ -7,7 +6,6 @@ type Skill = {
   name: string;
   category: string;
   icon: React.ReactNode;
-  description?: string;
 };
 
 const skillsData: Skill[] = [
@@ -17,10 +15,17 @@ const skillsData: Skill[] = [
     category: "DATA & IA",
     icon: <Code className="text-tech-light-blue" size={24} />
   }, {
-    name: "Machine Learning et Deep Learning",
+    name: "Machine Learning",
     category: "DATA & IA",
-    icon: <Settings className="text-tech-light-blue" size={24} />,
-    description: "Réseaux de neurones, Transfer Learning, traitement du signal, classification, IA Générative, NLP, LLM, Embedding, RAG"
+    icon: <Settings className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Deep Learning",
+    category: "DATA & IA",
+    icon: <Settings className="text-tech-light-blue" size={24} />
+  }, {
+    name: "NLP",
+    category: "DATA & IA",
+    icon: <Terminal className="text-tech-light-blue" size={24} />
   }, {
     name: "TensorFlow",
     category: "DATA & IA",
@@ -93,7 +98,7 @@ const skillsData: Skill[] = [
 const categoryData = [
   {
     name: "DATA & IA",
-    value: 6
+    value: 8
   }, {
     name: "Front & Back End",
     value: 8
@@ -194,9 +199,6 @@ const Skills: React.FC = () => {
                     <div key={index} className="glass p-4 flex flex-col items-center text-center transition-transform hover:scale-105">
                       <div className="mb-3 text-tech-light-blue">{skill.icon}</div>
                       <h4 className="font-medium text-tech-lightest-slate">{skill.name}</h4>
-                      {skill.description && (
-                        <p className="text-sm text-tech-light-slate mt-2">{skill.description}</p>
-                      )}
                     </div>
                   ))}
               </div>
