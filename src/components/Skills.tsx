@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee } from 'lucide-react';
+import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom } from 'lucide-react';
 
 type Skill = {
   name: string;
@@ -10,15 +10,38 @@ type Skill = {
 };
 
 const skillsData: Skill[] = [
-  // DATA & IA
+  // Language
   {
     name: "Python",
-    category: "DATA & IA",
+    category: "Language",
     icon: <Code className="text-tech-light-blue" size={24} />
   }, {
+    name: "JavaScript",
+    category: "Language",
+    icon: <Code className="text-tech-light-blue" size={24} />
+  }, {
+    name: "TypeScript",
+    category: "Language",
+    icon: <FileCode className="text-tech-light-blue" size={24} />
+  }, {
+    name: "R",
+    category: "Language",
+    icon: <BarChart2 className="text-tech-light-blue" size={24} />
+  }, {
+    name: "PHP",
+    category: "Language",
+    icon: <Code className="text-tech-light-blue" size={24} />
+  }, {
+    name: "JAVA",
+    category: "Language",
+    icon: <Coffee className="text-tech-light-blue" size={24} />
+  },
+  
+  // DATA & IA
+  {
     name: "Machine Learning et Deep Learning",
     category: "DATA & IA",
-    icon: <Settings className="text-tech-light-blue" size={24} />
+    icon: <Brain className="text-tech-light-blue" size={24} />
   }, {
     name: "NLP, LLM, Embedding, RAG",
     category: "DATA & IA",
@@ -26,7 +49,7 @@ const skillsData: Skill[] = [
   }, {
     name: "TensorFlow",
     category: "DATA & IA",
-    icon: <Wrench className="text-tech-light-blue" size={24} />
+    icon: <Atom className="text-tech-light-blue" size={24} />
   }, {
     name: "PyTorch",
     category: "DATA & IA",
@@ -35,45 +58,25 @@ const skillsData: Skill[] = [
     name: "Scikit-Learn",
     category: "DATA & IA",
     icon: <Wrench className="text-tech-light-blue" size={24} />
-  }, {
-    name: "R",
-    category: "DATA & IA",
-    icon: <BarChart2 className="text-tech-light-blue" size={24} />
   },
   
   // Front & Back End
   {
-    name: "JavaScript",
-    category: "Front & Back End",
-    icon: <Code className="text-tech-light-blue" size={24} />
-  }, {
-    name: "TypeScript",
-    category: "Front & Back End",
-    icon: <FileCode className="text-tech-light-blue" size={24} />
-  }, {
     name: "NodeJS",
-    category: "Front & Back End",
+    category: "FrontEnd & BackEnd",
     icon: <Server className="text-tech-light-blue" size={24} />
   }, {
     name: "React",
-    category: "Front & Back End",
+    category: "FrontEnd & BackEnd",
     icon: <LayoutDashboard className="text-tech-light-blue" size={24} />
   }, {
-    name: "PHP",
-    category: "Front & Back End",
-    icon: <Code className="text-tech-light-blue" size={24} />
-  }, {
     name: "MongoDB",
-    category: "Front & Back End",
+    category: "FrontEnd & BackEnd",
     icon: <Database className="text-tech-light-blue" size={24} />
   }, {
     name: "PostgreSQL",
-    category: "Front & Back End",
+    category: "FrontEnd & BackEnd",
     icon: <Database className="text-tech-light-blue" size={24} />
-  }, {
-    name: "JAVA",
-    category: "Front & Back End",
-    icon: <Coffee className="text-tech-light-blue" size={24} />
   },
   
   // Cloud & DevOps
@@ -94,11 +97,14 @@ const skillsData: Skill[] = [
 
 const categoryData = [
   {
-    name: "DATA & IA",
-    value: 7
+    name: "Language",
+    value: 6
   }, {
-    name: "Front & Back End",
-    value: 8
+    name: "DATA & IA",
+    value: 5
+  }, {
+    name: "FrontEnd & BackEnd",
+    value: 4
   }, {
     name: "Cloud & DevOps",
     value: 3
@@ -171,7 +177,7 @@ const Skills: React.FC = () => {
               </ResponsiveContainer>
             </div>
             
-            <div className="mt-6 grid grid-cols-3 gap-2">
+            <div className="mt-6 grid grid-cols-4 gap-2">
               {categoryData.map((category, index) => <div key={index} className="flex items-center">
                   <div className="w-3 h-3 rounded-full mr-2" style={{
                 backgroundColor: COLORS[index % COLORS.length]
@@ -186,7 +192,7 @@ const Skills: React.FC = () => {
           <h3 className="text-xl font-semibold mb-6 text-center text-tech-lightest-slate">Liste des compétences</h3>
           
           {/* Group skills by category */}
-          {["DATA & IA", "Front & Back End", "Cloud & DevOps"].map((category, categoryIndex) => (
+          {["Language", "DATA & IA", "FrontEnd & BackEnd", "Cloud & DevOps"].map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-8">
               <h4 className="text-lg font-medium mb-4 text-tech-light-blue border-b border-tech-light-navy pb-2">{category}</h4>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
