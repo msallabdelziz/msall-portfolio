@@ -1,7 +1,6 @@
-
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar, Layers, Smartphone } from 'lucide-react';
+import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar, Layers, Smartphone, GitBranch, GitMerge, GitLab } from 'lucide-react';
 
 type Skill = {
   name: string;
@@ -10,7 +9,6 @@ type Skill = {
 };
 
 const skillsData: Skill[] = [
-  // Language
   {
     name: "Python",
     category: "Language",
@@ -37,7 +35,6 @@ const skillsData: Skill[] = [
     icon: <Coffee className="text-tech-light-blue" size={24} />
   },
   
-  // DATA & IA
   {
     name: "Machine Learning et Deep Learning",
     category: "DATA & IA",
@@ -76,7 +73,6 @@ const skillsData: Skill[] = [
     icon: <ChartBar className="text-tech-light-blue" size={24} />
   },
   
-  // Front & Back End
   {
     name: "NodeJS",
     category: "FrontEnd & BackEnd",
@@ -111,14 +107,12 @@ const skillsData: Skill[] = [
     icon: <Code className="text-tech-light-blue" size={24} />
   },
   
-  // Mobile
   {
     name: "Flutter",
     category: "Mobile",
     icon: <Smartphone className="text-tech-light-blue" size={24} />
   },
   
-  // Cloud & DevOps
   {
     name: "Docker",
     category: "Cloud & DevOps",
@@ -131,6 +125,22 @@ const skillsData: Skill[] = [
     name: "Terminal",
     category: "Cloud & DevOps",
     icon: <Terminal className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Hadoop",
+    category: "Cloud & DevOps",
+    icon: <GitMerge className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Google Cloud",
+    category: "Cloud & DevOps",
+    icon: <Cloud className="text-tech-light-blue" size={24} />
+  }, {
+    name: "GitLab",
+    category: "Cloud & DevOps",
+    icon: <GitLab className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Jira",
+    category: "Cloud & DevOps",
+    icon: <Settings className="text-tech-light-blue" size={24} />
   }
 ];
 
@@ -149,7 +159,7 @@ const categoryData = [
     value: 1
   }, {
     name: "Cloud & DevOps",
-    value: 3
+    value: 6
   }
 ];
 
@@ -233,7 +243,6 @@ const Skills: React.FC = () => {
         <div className="mt-12 glass p-6 reveal">
           <h3 className="text-xl font-semibold mb-6 text-center text-tech-lightest-slate">Liste des compétences</h3>
           
-          {/* Group skills by category */}
           {["Language", "DATA & IA", "FrontEnd & BackEnd", "Mobile", "Cloud & DevOps"].map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-8">
               <h4 className="text-lg font-medium mb-4 text-tech-light-blue border-b border-tech-light-navy pb-2">{category}</h4>
