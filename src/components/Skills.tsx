@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee } from 'lucide-react';
@@ -15,15 +16,11 @@ const skillsData: Skill[] = [
     category: "DATA & IA",
     icon: <Code className="text-tech-light-blue" size={24} />
   }, {
-    name: "Machine Learning",
+    name: "Machine Learning et Deep Learning",
     category: "DATA & IA",
     icon: <Settings className="text-tech-light-blue" size={24} />
   }, {
-    name: "Deep Learning",
-    category: "DATA & IA",
-    icon: <Settings className="text-tech-light-blue" size={24} />
-  }, {
-    name: "NLP",
+    name: "NLP, LLM, Embedding, RAG",
     category: "DATA & IA",
     icon: <Terminal className="text-tech-light-blue" size={24} />
   }, {
@@ -98,7 +95,7 @@ const skillsData: Skill[] = [
 const categoryData = [
   {
     name: "DATA & IA",
-    value: 8
+    value: 7
   }, {
     name: "Front & Back End",
     value: 8
