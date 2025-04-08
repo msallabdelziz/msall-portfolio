@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom } from 'lucide-react';
+import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar } from 'lucide-react';
 
 type Skill = {
   name: string;
@@ -58,6 +58,22 @@ const skillsData: Skill[] = [
     name: "Scikit-Learn",
     category: "DATA & IA",
     icon: <Wrench className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Keras",
+    category: "DATA & IA",
+    icon: <Brain className="text-tech-light-blue" size={24} />
+  }, {
+    name: "OpenCV",
+    category: "DATA & IA",
+    icon: <BarChart2 className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Power BI",
+    category: "DATA & IA",
+    icon: <ChartPie className="text-tech-light-blue" size={24} />
+  }, {
+    name: "Tableau",
+    category: "DATA & IA",
+    icon: <ChartBar className="text-tech-light-blue" size={24} />
   },
   
   // Front & Back End
@@ -101,7 +117,7 @@ const categoryData = [
     value: 6
   }, {
     name: "DATA & IA",
-    value: 5
+    value: 9
   }, {
     name: "FrontEnd & BackEnd",
     value: 4
