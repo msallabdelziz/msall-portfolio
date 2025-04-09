@@ -45,11 +45,13 @@ const Resume: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="#"
+                href="/lovable-uploads/42fb82d8-8cee-45c2-8d7c-c0528fffd7fa.png"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center justify-center w-full sm:w-auto bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue font-medium px-6 py-3 border border-tech-light-blue rounded-md transition-all duration-300"
               >
                 <FileText size={18} className="mr-2" />
-                Voir en ligne
+                Voir mon CV
               </a>
               <a 
                 href="/lovable-uploads/42fb82d8-8cee-45c2-8d7c-c0528fffd7fa.png"
