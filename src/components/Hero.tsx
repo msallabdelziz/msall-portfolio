@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Code, LineChart, Globe, ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Code, LineChart, Globe, ChevronDown, Github, Linkedin, Mail, Dices } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero: React.FC = () => {
@@ -140,14 +140,17 @@ const Hero: React.FC = () => {
             
             <div className="mt-10 md:flex md:justify-end">
               <div className="flex items-center space-x-4">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
+                <a href="https://github.com/msallabdelziz" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
                   <Github size={20} className="transition-transform duration-300 group-hover:scale-110" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
+                <a href="https://www.linkedin.com/msallabdelziz" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
                   <Linkedin size={20} className="transition-transform duration-300 group-hover:scale-110" />
                 </a>
-                <a href="mailto:contact@example.com" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
+                <a href="mailto:msall.abdelaziz@gmail.com" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
                   <Mail size={20} className="transition-transform duration-300 group-hover:scale-110" />
+                </a>
+                <a href="https://www.kaggle.com/msallabdelziz" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
+                  <Dices size={20} className="transition-transform duration-300 group-hover:scale-110" />
                 </a>
               </div>
             </div>
