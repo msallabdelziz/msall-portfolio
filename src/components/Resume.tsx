@@ -59,7 +59,7 @@ const Resume: React.FC = () => {
                 className="group flex items-center justify-center w-full sm:w-auto bg-tech-light-blue text-tech-dark-blue hover:bg-tech-light-blue/90 font-medium px-6 py-3 rounded-md transition-all duration-300"
               >
                 <Download size={18} className="mr-2" />
-                Télécharger PDF
+                Télécharger mon CV
               </a>
             </div>
           </div>
@@ -82,3 +82,4 @@ const Resume: React.FC = () => {
 };
 
 export default Resume;
+
