@@ -45,7 +45,7 @@ const projectsData: Project[] = [
     technologies: ["React", "D3.js", "Node.js", "PostgreSQL"],
     github: "https://github.com",
     featured: false,
-    category: "web"
+    category: "data"
   },
   {
     id: 4,
@@ -66,8 +66,6 @@ const Projects: React.FC = () => {
   useEffect(() => {
     if (filter === 'all') {
       setFilteredProjects(projectsData);
-    } else if (filter === 'featured') {
-      setFilteredProjects(projectsData.filter(project => project.featured));
     } else {
       setFilteredProjects(projectsData.filter(project => project.category === filter));
     }
@@ -106,7 +104,7 @@ const Projects: React.FC = () => {
         
         <div className="flex justify-center mb-10 reveal">
           <div className="inline-flex p-1 space-x-1 bg-tech-navy rounded-lg">
-            {['all', 'featured', 'web', 'mobile'].map(category => (
+            {['all', 'data', 'web', 'mobile'].map(category => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}
@@ -116,7 +114,9 @@ const Projects: React.FC = () => {
                     : 'text-tech-light-slate hover:text-tech-lightest-slate'
                 }`}
               >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
+                {category === 'all' ? 'All' : 
+                 category === 'data' ? 'IA / DATA' : 
+                 category.charAt(0).toUpperCase() + category.slice(1)}
               </button>
             ))}
           </div>
