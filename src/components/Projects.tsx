@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github } from 'lucide-react';
 
@@ -18,7 +19,7 @@ const projectsData: Project[] = [
     id: 1,
     title: "ChatBot MultiPDF",
     description: "Une application de chatbot capable de répondre à des questions basées sur le contenu de plusieurs fichiers PDF.",
-    image: "https://via.placeholder.com/600x340",
+    image: "/lovable-uploads/4d5d21c8-6b77-4446-842e-79ab06c68fd1.png",
     technologies: ["Python", "LangChain", "OpenAI", "Streamlit"],
     github: "https://github.com/msallabdelziz/ChatBot_MultiPDF",
     featured: true,
