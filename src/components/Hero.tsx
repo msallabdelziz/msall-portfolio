@@ -148,7 +148,7 @@ const Hero: React.FC = () => {
                 <a href="mailto:msall.abdelaziz@gmail.com" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
                   <Mail size={20} className="transition-transform duration-300 group-hover:scale-110" />
                 </a>
-                <a href="https://www.kaggle.com/msallabdelziz" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
+                <a href="https://www.kaggle.com/msallabdelaziz" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
                   <span className="text-base font-bold transition-transform duration-300 group-hover:scale-110">k</span>
                 </a>
               </div>
