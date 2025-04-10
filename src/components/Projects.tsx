@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github } from 'lucide-react';
 
@@ -17,6 +16,16 @@ type Project = {
 const projectsData: Project[] = [
   {
     id: 1,
+    title: "ChatBot MultiPDF",
+    description: "Une application de chatbot capable de répondre à des questions basées sur le contenu de plusieurs fichiers PDF.",
+    image: "https://via.placeholder.com/600x340",
+    technologies: ["Python", "LangChain", "OpenAI", "Streamlit"],
+    github: "https://github.com/msallabdelziz/ChatBot_MultiPDF",
+    featured: true,
+    category: "data"
+  },
+  {
+    id: 2,
     title: "E-commerce Platform",
     description: "Une plateforme e-commerce complète avec panier d'achat, paiements sécurisés et panel d'administration pour la gestion des produits.",
     image: "https://via.placeholder.com/600x340",
@@ -27,7 +36,7 @@ const projectsData: Project[] = [
     category: "web"
   },
   {
-    id: 2,
+    id: 3,
     title: "Application de Gestion de Tâches",
     description: "Une application de gestion de tâches avec fonctionnalités collaboratives, notifications et suivi des échéances.",
     image: "https://via.placeholder.com/600x340",
@@ -38,7 +47,7 @@ const projectsData: Project[] = [
     category: "mobile"
   },
   {
-    id: 3,
+    id: 4,
     title: "Tableau de Bord Analytique",
     description: "Un tableau de bord analytique pour visualiser et analyser les données d'entreprise avec des graphiques interactifs.",
     image: "https://via.placeholder.com/600x340",
@@ -48,7 +57,7 @@ const projectsData: Project[] = [
     category: "data"
   },
   {
-    id: 4,
+    id: 5,
     title: "Application Météo",
     description: "Une application météo avec prévisions détaillées, alertes météorologiques et visualisations dynamiques.",
     image: "https://via.placeholder.com/600x340",
@@ -71,7 +80,6 @@ const Projects: React.FC = () => {
     }
   }, [filter]);
 
-  // Reveal animation on scroll
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
     
