@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -47,6 +46,16 @@ const projectsData: Project[] = [
   },
   {
     id: 4,
+    title: "IA Santé Animale",
+    description: "Backend d'une application d'intelligence artificielle pour la santé animale, permettant le diagnostic assisté et le suivi vétérinaire à l'aide d'algorithmes de machine learning.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&h=340",
+    technologies: ["Python", "FastAPI", "Machine Learning", "Computer Vision", "TensorFlow"],
+    github: "https://github.com/msallabdelziz/backend_IA_sante_animal",
+    featured: true,
+    category: "data"
+  },
+  {
+    id: 5,
     title: "Todo List avec Strapi et React",
     description: "Une application de gestion de tâches moderne construite avec React pour le frontend et Strapi comme CMS headless pour le backend. L'application permet de créer, gérer et organiser des tâches avec une interface utilisateur intuitive.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=340",
@@ -56,7 +65,7 @@ const projectsData: Project[] = [
     category: "web"
   },
   {
-    id: 5,
+    id: 6,
     title: "E-commerce Platform",
     description: "Une plateforme e-commerce complète avec panier d'achat, paiements sécurisés et panel d'administration pour la gestion des produits.",
     image: "https://via.placeholder.com/600x340",
@@ -67,7 +76,7 @@ const projectsData: Project[] = [
     category: "web"
   },
   {
-    id: 6,
+    id: 7,
     title: "Application de Gestion de Tâches",
     description: "Une application de gestion de tâches avec fonctionnalités collaboratives, notifications et suivi des échéances.",
     image: "https://via.placeholder.com/600x340",
@@ -78,7 +87,7 @@ const projectsData: Project[] = [
     category: "mobile"
   },
   {
-    id: 7,
+    id: 8,
     title: "Tableau de Bord Analytique",
     description: "Un tableau de bord analytique pour visualiser et analyser les données d'entreprise avec des graphiques interactifs.",
     image: "https://via.placeholder.com/600x340",
@@ -88,7 +97,7 @@ const projectsData: Project[] = [
     category: "data"
   },
   {
-    id: 8,
+    id: 9,
     title: "Application Météo",
     description: "Une application météo avec prévisions détaillées, alertes météorologiques et visualisations dynamiques.",
     image: "https://via.placeholder.com/600x340",
