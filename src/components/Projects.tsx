@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -53,7 +52,7 @@ const projectsData: Project[] = [
     technologies: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "IoT", "Machine Learning", "TensorFlow", "Scikit-Learn"],
     github: "https://github.com/msallabdelziz/backend_IA_sante_animal",
     featured: true,
-    category: "data"
+    category: ["data", "web"]
   },
   {
     id: 5,
