@@ -149,8 +149,8 @@ const Hero: React.FC = () => {
                   <Mail size={20} className="transition-transform duration-300 group-hover:scale-110" />
                 </a>
                 <a href="https://www.kaggle.com/msallabdelziz" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 64 64" className="transition-transform duration-300 group-hover:scale-110">
-                    <path fill="currentColor" d="M32 0a32 32 0 1 0 32 32A32 32 0 0 0 32 0zm11.2 48.8h-9.6V32h9.6v16.8zm-9.6-24V9.6h9.6v15.2h-9.6z"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="transition-transform duration-300 group-hover:scale-110">
+                    <path d="M19.428 4.5H4.572C3.16 4.5 2 5.655 2 7.06v9.88c0 1.405 1.16 2.56 2.572 2.56h14.856c1.413 0 2.572-1.155 2.572-2.56V7.06c0-1.405-1.16-2.56-2.572-2.56Zm-12.16 9.555V9.945a.586.586 0 0 1 .578-.585h.72c.32 0 .616.207.745.505l1.456 3.13 1.455-3.13a.813.813 0 0 1 .746-.505h.72c.32 0 .578.263.578.585v4.11c0 .322-.257.585-.578.585h-.665a.586.586 0 0 1-.578-.585V11.83l-1.242 2.654a.694.694 0 0 1-.65.424h-.397a.694.694 0 0 1-.65-.424L7.22 11.83v2.225c0 .322-.257.585-.578.585h-.665a.586.586 0 0 1-.578-.585h-.001Zm10.494.585h-1.045c-.321 0-.578-.263-.578-.585V9.945c0-.322.257-.585.578-.585h1.045c.321 0 .578.263.578.585v4.11c0 .322-.257.585-.578.585Z"/>
                   </svg>
                 </a>
               </div>
