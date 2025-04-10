@@ -99,6 +99,18 @@ const Navbar: React.FC = () => {
             <NavItem href="#resume" text="CV" onClick={() => scrollToSection('resume')} />
             <NavItem href="#contact" text="Contact" onClick={() => scrollToSection('contact')} />
           </ul>
+          
+          {/* Bouton pour fermer le menu mobile */}
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center space-x-2 text-tech-light-slate hover:text-tech-light-blue transition-colors py-2 px-4 border border-tech-light-slate hover:border-tech-light-blue rounded-md"
+              aria-label="Fermer le menu"
+            >
+              <X size={18} />
+              <span>Fermer le menu</span>
+            </button>
+          </div>
         </nav>
       </div>
     </header>
