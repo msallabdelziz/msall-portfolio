@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -74,58 +73,7 @@ const projectsData: Project[] = [
     github: "https://github.com/msallabdelziz/BokoRide-backend",
     featured: true,
     category: "web"
-  },
-  {
-    id: 7,
-    title: "E-commerce Platform",
-    description: "Une plateforme e-commerce complète avec panier d'achat, paiements sécurisés et panel d'administration pour la gestion des produits.",
-    image: "https://via.placeholder.com/600x340",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-    github: "https://github.com",
-    demo: "https://demo.com",
-    featured: true,
-    category: "web"
-  },
-  {
-    id: 8,
-    title: "Application de Gestion de Tâches",
-    description: "Une application de gestion de tâches avec fonctionnalités collaboratives, notifications et suivi des échéances.",
-    image: "https://via.placeholder.com/600x340",
-    technologies: ["Vue.js", "Firebase", "TailwindCSS"],
-    github: "https://github.com",
-    demo: "https://demo.com",
-    featured: true,
-    category: "mobile"
-  },
-  {
-    id: 9,
-    title: "Tableau de Bord Analytique",
-    description: "Un tableau de bord analytique pour visualiser et analyser les données d'entreprise avec des graphiques interactifs.",
-    image: "https://via.placeholder.com/600x340",
-    technologies: ["React", "D3.js", "Node.js", "PostgreSQL"],
-    github: "https://github.com",
-    featured: false,
-    category: "data"
-  },
-  {
-    id: 10,
-    title: "Application Météo",
-    description: "Une application météo avec prévisions détaillées, alertes météorologiques et visualisations dynamiques.",
-    image: "https://via.placeholder.com/600x340",
-    technologies: ["React Native", "API OpenWeatherMap", "Redux"],
-    demo: "https://demo.com",
-    featured: false,
-    category: "mobile"
-  },
-  {
-    id: 11,
-    title: "Backend Web Application",
-    description: "Une application backend robuste construite avec Node.js et Express.js, utilisant MongoDB pour le stockage de données et JWT pour l'authentification sécurisée.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&h=340",
-    technologies: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT"],
-    featured: true,
-    category: "web"
-  },
+  }
 ];
 
 const Projects: React.FC = () => {
