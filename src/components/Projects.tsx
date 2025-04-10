@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -11,7 +10,7 @@ type Project = {
   github?: string;
   demo?: string;
   featured: boolean;
-  category: string;
+  category: string | string[];
 };
 
 const projectsData: Project[] = [
@@ -121,13 +120,18 @@ const projectsData: Project[] = [
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projectsData);
-  const [expandedDescriptions, setExpandedDescriptions] = useState<number[]>([]);
 
   useEffect(() => {
     if (filter === 'all') {
       setFilteredProjects(projectsData);
     } else {
-      setFilteredProjects(projectsData.filter(project => project.category === filter));
+      setFilteredProjects(
+        projectsData.filter(project => 
+          Array.isArray(project.category) 
+            ? project.category.includes(filter)
+            : project.category === filter
+        )
+      );
     }
   }, [filter]);
 
