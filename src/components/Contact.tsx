@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Send, Github, Linkedin, Phone } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
 
 const WhatsAppIcon = () => (
   <svg 
@@ -8,8 +5,12 @@ const WhatsAppIcon = () => (
     width="22" 
     height="22" 
     viewBox="0 0 24 24" 
-    fill="currentColor" 
-    className="text-tech-light-slate hover:text-tech-light-blue"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="text-tech-light-slate hover:text-green-500 transition-colors"
   >
     <path d="M12.001 2c5.524 0 10 4.477 10 10s-4.476 10-10 10a9.96 9.96 0 0 1-4.099-.018l-4.902 1.617 1.717-4.687A9.947 9.947 0 0 1 2.001 12c0-5.523 4.477-10 10-10zm5.917 7.485l-.127-.127a3.119 3.119 0 0 0-4.408 0l-.788.788a.25.25 0 0 0 0 .354l1.601 1.601a.25.25 0 0 0 .354 0l.788-.788a.957.957 0 0 1 1.352 0l1.257 1.257c.039.039.039.102 0 .141l-1.943 1.943a.25.25 0 0 1-.354 0l-3.792-3.792a.25.25 0 0 1 0-.354l.788-.788a3.119 3.119 0 0 0 0-4.408l-.127-.127a3.214 3.214 0 0 0-4.45 0l-1.177 1.177a3.187 3.187 0 0 0 0 4.508l4.55 4.55a3.187 3.187 0 0 0 4.508 0l2.95-2.95a3.187 3.187 0 0 0 0-4.508z" />
   </svg>
