@@ -64,9 +64,9 @@ const Navbar: React.FC = () => {
         <nav className="hidden md:block">
           <ul className="flex space-x-2 font-medium">
             <NavItem href="#about" text="À propos" onClick={() => scrollToSection('about')} />
+            <NavItem href="#skills" text="Compétences" onClick={() => scrollToSection('skills')} />
             <NavItem href="#projects" text="Projets" onClick={() => scrollToSection('projects')} />
             <NavItem href="#experience" text="Expérience" onClick={() => scrollToSection('experience')} />
-            <NavItem href="#skills" text="Compétences" onClick={() => scrollToSection('skills')} />
             <NavItem href="#resume" text="CV" onClick={() => scrollToSection('resume')} />
             <NavItem href="#contact" text="Contact" onClick={() => scrollToSection('contact')} />
           </ul>
@@ -93,9 +93,9 @@ const Navbar: React.FC = () => {
         <nav className="container mx-auto px-6 h-full overflow-y-auto">
           <ul className="flex flex-col space-y-6 items-center pt-6">
             <NavItem href="#about" text="À propos" onClick={() => scrollToSection('about')} />
+            <NavItem href="#skills" text="Compétences" onClick={() => scrollToSection('skills')} />
             <NavItem href="#projects" text="Projets" onClick={() => scrollToSection('projects')} />
             <NavItem href="#experience" text="Expérience" onClick={() => scrollToSection('experience')} />
-            <NavItem href="#skills" text="Compétences" onClick={() => scrollToSection('skills')} />
             <NavItem href="#resume" text="CV" onClick={() => scrollToSection('resume')} />
             <NavItem href="#contact" text="Contact" onClick={() => scrollToSection('contact')} />
           </ul>
