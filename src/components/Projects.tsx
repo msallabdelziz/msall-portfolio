@@ -47,6 +47,16 @@ const projectsData: Project[] = [
   },
   {
     id: 4,
+    title: "Todo List avec Strapi et React",
+    description: "Une application de gestion de tâches moderne construite avec React pour le frontend et Strapi comme CMS headless pour le backend. L'application permet de créer, gérer et organiser des tâches avec une interface utilisateur intuitive.",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=340",
+    technologies: ["React", "Strapi", "RESTful API", "Tailwind CSS", "JavaScript"],
+    github: "https://github.com/msallabdelziz/todo_list_Strapi_React",
+    featured: true,
+    category: "web"
+  },
+  {
+    id: 5,
     title: "E-commerce Platform",
     description: "Une plateforme e-commerce complète avec panier d'achat, paiements sécurisés et panel d'administration pour la gestion des produits.",
     image: "https://via.placeholder.com/600x340",
@@ -57,7 +67,7 @@ const projectsData: Project[] = [
     category: "web"
   },
   {
-    id: 5,
+    id: 6,
     title: "Application de Gestion de Tâches",
     description: "Une application de gestion de tâches avec fonctionnalités collaboratives, notifications et suivi des échéances.",
     image: "https://via.placeholder.com/600x340",
@@ -68,7 +78,7 @@ const projectsData: Project[] = [
     category: "mobile"
   },
   {
-    id: 6,
+    id: 7,
     title: "Tableau de Bord Analytique",
     description: "Un tableau de bord analytique pour visualiser et analyser les données d'entreprise avec des graphiques interactifs.",
     image: "https://via.placeholder.com/600x340",
@@ -78,7 +88,7 @@ const projectsData: Project[] = [
     category: "data"
   },
   {
-    id: 7,
+    id: 8,
     title: "Application Météo",
     description: "Une application météo avec prévisions détaillées, alertes météorologiques et visualisations dynamiques.",
     image: "https://via.placeholder.com/600x340",
