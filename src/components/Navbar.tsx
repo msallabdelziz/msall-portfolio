@@ -28,6 +28,18 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Empêcher le défilement du corps lorsque le menu mobile est ouvert
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [mobileMenuOpen]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -76,9 +88,10 @@ const Navbar: React.FC = () => {
           "fixed inset-0 bg-tech-dark-blue/95 backdrop-blur-md z-40 md:hidden transition-transform duration-300 pt-20",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
+        style={{ height: '100vh' }}
       >
-        <nav className="container mx-auto px-6">
-          <ul className="flex flex-col space-y-6 items-center">
+        <nav className="container mx-auto px-6 h-full overflow-y-auto">
+          <ul className="flex flex-col space-y-6 items-center pt-6">
             <NavItem href="#about" text="À propos" onClick={() => scrollToSection('about')} />
             <NavItem href="#projects" text="Projets" onClick={() => scrollToSection('projects')} />
             <NavItem href="#experience" text="Expérience" onClick={() => scrollToSection('experience')} />
