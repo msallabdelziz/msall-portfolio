@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { Mail, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Send, Github, Linkedin, Twitter, Phone, WhatsApp } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact: React.FC = () => {
@@ -143,6 +142,14 @@ const Contact: React.FC = () => {
                     <a href="mailto:msall.abdelaziz@gmail.com" className="text-tech-light-slate hover:text-tech-light-blue transition-colors">msall.abdelaziz@gmail.com</a>
                   </div>
                 </div>
+                
+                <div className="flex items-start mb-4">
+                  <Phone size={20} className="text-tech-light-blue mr-3 mt-1" />
+                  <div>
+                    <p className="text-tech-lightest-slate">Téléphone</p>
+                    <a href="tel:+33758368844" className="text-tech-light-slate hover:text-tech-light-blue transition-colors">(+33) 7 58 36 88 44</a>
+                  </div>
+                </div>
               </div>
               
               <h3 className="text-xl font-semibold mb-4 text-tech-lightest-slate">Réseaux sociaux</h3>
@@ -152,6 +159,9 @@ const Contact: React.FC = () => {
                 </a>
                 <a href="https://www.linkedin.com/in/msallabdelaziz/" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="LinkedIn">
                   <Linkedin size={22} />
+                </a>
+                <a href="https://wa.me/33758368844" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="WhatsApp">
+                  <WhatsApp size={22} />
                 </a>
                 <a href="mailto:msall.abdelaziz@gmail.com" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="Email">
                   <Mail size={22} />
