@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -36,6 +37,16 @@ const projectsData: Project[] = [
   },
   {
     id: 3,
+    title: "Détection de Phishing par Email",
+    description: "Ce projet a pour objectif de détecter automatiquement les emails de phishing à partir du jeu de données Enron. Le pipeline combine du traitement de texte, du feature engineering et une classification par machine learning pour différencier les emails phishing des emails légitimes.",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&h=340",
+    technologies: ["Python", "NLP", "Machine Learning", "Feature Engineering"],
+    github: "https://github.com/msallabdelziz/detection-de-mails-phishing",
+    featured: true,
+    category: "data"
+  },
+  {
+    id: 4,
     title: "E-commerce Platform",
     description: "Une plateforme e-commerce complète avec panier d'achat, paiements sécurisés et panel d'administration pour la gestion des produits.",
     image: "https://via.placeholder.com/600x340",
@@ -46,7 +57,7 @@ const projectsData: Project[] = [
     category: "web"
   },
   {
-    id: 3,
+    id: 5,
     title: "Application de Gestion de Tâches",
     description: "Une application de gestion de tâches avec fonctionnalités collaboratives, notifications et suivi des échéances.",
     image: "https://via.placeholder.com/600x340",
@@ -57,7 +68,7 @@ const projectsData: Project[] = [
     category: "mobile"
   },
   {
-    id: 4,
+    id: 6,
     title: "Tableau de Bord Analytique",
     description: "Un tableau de bord analytique pour visualiser et analyser les données d'entreprise avec des graphiques interactifs.",
     image: "https://via.placeholder.com/600x340",
@@ -67,7 +78,7 @@ const projectsData: Project[] = [
     category: "data"
   },
   {
-    id: 5,
+    id: 7,
     title: "Application Météo",
     description: "Une application météo avec prévisions détaillées, alertes météorologiques et visualisations dynamiques.",
     image: "https://via.placeholder.com/600x340",
