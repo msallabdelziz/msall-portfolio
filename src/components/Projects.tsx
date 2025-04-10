@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -149,17 +148,17 @@ const Projects: React.FC = () => {
       );
     } else {
       return (
-        <>
-          <p className="text-tech-light-slate mb-4">{project.description.substring(0, maxLength)}...</p>
+        <p className="text-tech-light-slate mb-4">
+          {project.description.substring(0, maxLength)}... 
           <button 
             onClick={() => toggleDescription(project.id)} 
-            className="text-tech-light-blue flex items-center text-sm mb-4 hover:text-tech-lightest-slate transition-colors"
+            className="text-tech-light-blue inline-flex items-center text-sm ml-2 hover:text-tech-lightest-slate transition-colors"
             aria-label="Voir plus"
           >
             Voir plus...
             <ChevronDown size={16} className="ml-1" />
           </button>
-        </>
+        </p>
       );
     }
   };
