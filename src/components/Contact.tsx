@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
-import { Mail, Send, Github, Linkedin, Twitter, Phone, MessageCircle } from 'lucide-react';
+import { Mail, Send, Github, Linkedin, Twitter, Phone, MessageCircle, Icon } from 'lucide-react';
+import dynamicIconImports from 'lucide-react/dynamicIconImports';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact: React.FC = () => {
@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
                   <Linkedin size={22} />
                 </a>
                 <a href="https://wa.me/33758368844" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="WhatsApp">
-                  <MessageCircle size={22} />
+                  <Icon name="whatsapp" size={22} />
                 </a>
                 <a href="mailto:msall.abdelaziz@gmail.com" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="Email">
                   <Mail size={22} />
