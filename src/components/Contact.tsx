@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Mail, Send, Github, Linkedin, Twitter } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -29,12 +30,22 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // Simulate form submission to the specified email
     setTimeout(() => {
+      // Prepare email data
+      const emailData = {
+        to: 'msall.abdelaziz@gmail.com',
+        from: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      };
+
       toast({
         title: "Message envoyé !",
         description: "Merci pour votre message. Je vous répondrai dès que possible."
       });
+
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -42,6 +53,9 @@ const Contact: React.FC = () => {
         message: ''
       });
       setIsSubmitting(false);
+
+      // Note: In a real-world scenario, you would use an actual email sending service
+      console.log('Email prepared to be sent:', emailData);
     }, 1500);
   };
 
