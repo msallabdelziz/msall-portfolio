@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -47,9 +48,9 @@ const projectsData: Project[] = [
   {
     id: 4,
     title: "IA Santé Animale",
-    description: "Backend d'une application d'intelligence artificielle pour la santé animale, permettant le diagnostic assisté et le suivi vétérinaire à l'aide d'algorithmes de machine learning.",
+    description: "Backend d'un système de surveillance et de santé animale basé sur l'Intelligence Artificielle. Il permet de gérer les utilisateurs (administrateurs et éleveurs), les fermes, les catégories d'élevage et facilite la collecte et le traitement des données issues des capteurs IoT. Inclut la gestion des utilisateurs, des fermes, l'intégration IoT pour la collecte de données en temps réel (température, activité), et l'envoi de notifications par email et SMS.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&h=340",
-    technologies: ["Python", "FastAPI", "Machine Learning", "Computer Vision", "TensorFlow"],
+    technologies: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "IoT", "dotenv"],
     github: "https://github.com/msallabdelziz/backend_IA_sante_animal",
     featured: true,
     category: "data"
