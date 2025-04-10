@@ -28,7 +28,7 @@ const projectsData: Project[] = [
   {
     id: 2,
     title: "Détection de Fraude Bancaire",
-    description: "Un modèle d'apprentissage automatique pour la détection de transactions bancaires frauduleuses basé sur des algorithmes de classification.",
+    description: "Un modèle d'apprentissage automatique pour la détection de transactions bancaires frauduleuses utilisant un modèle Random Forest (classification supervisée) et un autoencodeur (détection d'anomalies non supervisée) pour identifier les fraudes.",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&h=340",
     technologies: ["Python", "Scikit-Learn", "Pandas", "Jupyter Notebook"],
     github: "https://github.com/msallabdelziz/Detection_de_fraude_bancaire.ipynb",
