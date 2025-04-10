@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, Github } from 'lucide-react';
+import { ArrowUpRight, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
 type Project = {
   id: number;
@@ -81,6 +82,7 @@ const projectsData: Project[] = [
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projectsData);
+  const [expandedDescriptions, setExpandedDescriptions] = useState<number[]>([]);
 
   useEffect(() => {
     if (filter === 'all') {
@@ -110,6 +112,57 @@ const Projects: React.FC = () => {
     
     return () => window.removeEventListener('scroll', reveal);
   }, [filteredProjects]);
+
+  const toggleDescription = (projectId: number) => {
+    setExpandedDescriptions(prev => {
+      if (prev.includes(projectId)) {
+        return prev.filter(id => id !== projectId);
+      } else {
+        return [...prev, projectId];
+      }
+    });
+  };
+
+  const isDescriptionExpanded = (projectId: number) => {
+    return expandedDescriptions.includes(projectId);
+  };
+
+  const renderDescription = (project: Project) => {
+    const isExpanded = isDescriptionExpanded(project.id);
+    const maxLength = 100; // Maximum characters to show initially
+    
+    if (project.description.length <= maxLength || isExpanded) {
+      return (
+        <>
+          <p className="text-tech-light-slate mb-4">{project.description}</p>
+          {project.description.length > maxLength && (
+            <button 
+              onClick={() => toggleDescription(project.id)} 
+              className="text-tech-light-blue flex items-center text-sm mb-4 hover:text-tech-lightest-slate transition-colors"
+              aria-label={isExpanded ? "Voir moins" : "Voir plus"}
+            >
+              {isExpanded ? "Voir moins" : "Voir plus..."}
+              {isExpanded ? <ChevronUp size={16} className="ml-1" /> : <ChevronDown size={16} className="ml-1" />}
+            </button>
+          )}
+        </>
+      );
+    } else {
+      return (
+        <>
+          <p className="text-tech-light-slate mb-4">{project.description.substring(0, maxLength)}...</p>
+          <button 
+            onClick={() => toggleDescription(project.id)} 
+            className="text-tech-light-blue flex items-center text-sm mb-4 hover:text-tech-lightest-slate transition-colors"
+            aria-label="Voir plus"
+          >
+            Voir plus...
+            <ChevronDown size={16} className="ml-1" />
+          </button>
+        </>
+      );
+    }
+  };
 
   return (
     <section id="projects" className="section-padding py-28 bg-tech-dark-blue/30">
@@ -158,7 +211,7 @@ const Projects: React.FC = () => {
               
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-tech-lightest-slate">{project.title}</h3>
-                <p className="text-tech-light-slate mb-4">{project.description}</p>
+                {renderDescription(project)}
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, i) => (
