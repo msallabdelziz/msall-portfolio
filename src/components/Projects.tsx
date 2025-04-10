@@ -27,6 +27,16 @@ const projectsData: Project[] = [
   },
   {
     id: 2,
+    title: "Détection de Fraude Bancaire",
+    description: "Un modèle d'apprentissage automatique pour la détection de transactions bancaires frauduleuses basé sur des algorithmes de classification.",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&h=340",
+    technologies: ["Python", "Scikit-Learn", "Pandas", "Jupyter Notebook"],
+    github: "https://github.com/msallabdelziz/Detection_de_fraude_bancaire.ipynb",
+    featured: true,
+    category: "data"
+  },
+  {
+    id: 3,
     title: "E-commerce Platform",
     description: "Une plateforme e-commerce complète avec panier d'achat, paiements sécurisés et panel d'administration pour la gestion des produits.",
     image: "https://via.placeholder.com/600x340",
