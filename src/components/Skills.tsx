@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar, Layers, Smartphone, GitBranch, GitMerge, Gitlab, LineChart } from 'lucide-react';
-
 type Skill = {
   name: string;
   category: string;
   icon: React.ReactNode;
 };
-
 const skillsData: Skill[] = [{
   name: "Python",
   category: "Language",
@@ -133,7 +131,6 @@ const skillsData: Skill[] = [{
   category: "Cloud & DevOps",
   icon: <Settings className="text-tech-light-blue" size={24} />
 }];
-
 const categoryData = [{
   name: "Language",
   value: 6
@@ -150,9 +147,7 @@ const categoryData = [{
   name: "Cloud & DevOps",
   value: 6
 }];
-
 const COLORS = ['#64ffda', '#38bdf8', '#818cf8', '#6ee7b7', '#f472b6', '#fbbf24', '#fb923c'];
-
 const PieCustomTooltip = ({
   active,
   payload
@@ -165,7 +160,6 @@ const PieCustomTooltip = ({
   }
   return null;
 };
-
 const Skills: React.FC = () => {
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
@@ -182,11 +176,10 @@ const Skills: React.FC = () => {
     reveal();
     return () => window.removeEventListener('scroll', reveal);
   }, []);
-
   return <section id="skills" className="section-padding py-28 bg-tech-dark-blue/30">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-12 flex items-center reveal">
-          <span className="number-heading">03.</span>
+          <span className="number-heading">02.</span>
           Compétences
           <span className="h-[1px] bg-tech-light-navy ml-4 flex-grow"></span>
         </h2>
@@ -237,5 +230,4 @@ const Skills: React.FC = () => {
       </div>
     </section>;
 };
-
 export default Skills;
