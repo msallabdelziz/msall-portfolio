@@ -1,4 +1,8 @@
 
+import React, { useState, useEffect } from 'react';
+import { Mail, Send, Github, Linkedin, Phone } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+
 const WhatsAppIcon = () => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
