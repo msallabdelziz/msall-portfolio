@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Send, Github, Linkedin, Twitter } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,6 +13,7 @@ const Contact: React.FC = () => {
   const {
     toast
   } = useToast();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -22,6 +24,7 @@ const Contact: React.FC = () => {
       [name]: value
     }));
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -42,7 +45,6 @@ const Contact: React.FC = () => {
     }, 1500);
   };
 
-  // Reveal animation on scroll
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
     const reveal = () => {
@@ -59,6 +61,7 @@ const Contact: React.FC = () => {
     reveal();
     return () => window.removeEventListener('scroll', reveal);
   }, []);
+
   return <section id="contact" className="section-padding py-28 bg-tech-dark-blue/30">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-6 flex items-center reveal">
@@ -123,21 +126,21 @@ const Contact: React.FC = () => {
                   <Mail size={20} className="text-tech-light-blue mr-3 mt-1" />
                   <div>
                     <p className="text-tech-lightest-slate">Email</p>
-                    <a href="mailto:votre@email.com" className="text-tech-light-slate hover:text-tech-light-blue transition-colors">msall.abdelaziz@gmail.com</a>
+                    <a href="mailto:msall.abdelaziz@gmail.com" className="text-tech-light-slate hover:text-tech-light-blue transition-colors">msall.abdelaziz@gmail.com</a>
                   </div>
                 </div>
               </div>
               
               <h3 className="text-xl font-semibold mb-4 text-tech-lightest-slate">Réseaux sociaux</h3>
               <div className="flex space-x-4">
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="GitHub">
+                <a href="https://github.com/msallabdelaziz" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="GitHub">
                   <Github size={22} />
                 </a>
-                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/msallabdelaziz/" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="LinkedIn">
                   <Linkedin size={22} />
                 </a>
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="Twitter">
-                  <Twitter size={22} />
+                <a href="mailto:msall.abdelaziz@gmail.com" target="_blank" rel="noopener noreferrer" className="text-tech-light-slate hover:text-tech-light-blue transition-colors p-2 hover:bg-tech-light-blue/10 rounded-full" aria-label="Email">
+                  <Mail size={22} />
                 </a>
               </div>
             </div>
@@ -146,4 +149,5 @@ const Contact: React.FC = () => {
       </div>
     </section>;
 };
+
 export default Contact;
