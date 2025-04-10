@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -120,6 +121,7 @@ const projectsData: Project[] = [
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projectsData);
+  const [expandedDescriptions, setExpandedDescriptions] = useState<number[]>([]);
 
   useEffect(() => {
     if (filter === 'all') {
