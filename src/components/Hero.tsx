@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Code, LineChart, Globe, ChevronDown, Github, Linkedin, Mail, Dices } from 'lucide-react';
+import { ArrowRight, Code, LineChart, Globe, ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero: React.FC = () => {
@@ -150,7 +149,9 @@ const Hero: React.FC = () => {
                   <Mail size={20} className="transition-transform duration-300 group-hover:scale-110" />
                 </a>
                 <a href="https://www.kaggle.com/msallabdelziz" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue border border-tech-light-blue rounded-full transition-all duration-300">
-                  <Dices size={20} className="transition-transform duration-300 group-hover:scale-110" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" className="transition-transform duration-300 group-hover:scale-110">
+                    <path fill="currentColor" d="M213.48,122.66,69.74,18.11a12,12,0,0,0-19.74,9.24V228.65a12,12,0,0,0,19.74,9.24l143.74-104.55a12,12,0,0,0,0-18.48Z"/>
+                  </svg>
                 </a>
               </div>
             </div>
