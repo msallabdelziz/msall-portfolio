@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Code, Database, LayoutDashboard, Server, Settings, Terminal, Wrench, Cloud, BarChart2, FileCode, Coffee, Brain, Atom, ChartPie, ChartBar, Layers, Smartphone, GitBranch, GitMerge, Gitlab, LineChart } from 'lucide-react';
+
 type Skill = {
   name: string;
   category: string;
   icon: React.ReactNode;
 };
+
 const skillsData: Skill[] = [{
   name: "Python",
   category: "Language",
@@ -131,6 +133,7 @@ const skillsData: Skill[] = [{
   category: "Cloud & DevOps",
   icon: <Settings className="text-tech-light-blue" size={24} />
 }];
+
 const categoryData = [{
   name: "Language",
   value: 6
@@ -147,11 +150,10 @@ const categoryData = [{
   name: "Cloud & DevOps",
   value: 6
 }];
+
 const COLORS = ['#64ffda', '#38bdf8', '#818cf8', '#6ee7b7', '#f472b6', '#fbbf24', '#fb923c'];
-const PieCustomTooltip = ({
-  active,
-  payload
-}: any) => {
+
+const PieCustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     return <div className="glass p-2 text-sm">
         <p className="font-semibold">{payload[0].name}</p>
@@ -160,6 +162,7 @@ const PieCustomTooltip = ({
   }
   return null;
 };
+
 const Skills: React.FC = () => {
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
@@ -176,6 +179,7 @@ const Skills: React.FC = () => {
     reveal();
     return () => window.removeEventListener('scroll', reveal);
   }, []);
+
   return <section id="skills" className="section-padding py-28 bg-tech-dark-blue/30">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-12 flex items-center reveal">
@@ -190,44 +194,68 @@ const Skills: React.FC = () => {
             <div className="h-64 flex items-center justify-center">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={categoryData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5} dataKey="value" animationDuration={1500} label={({
-                  name
-                }) => name} labelLine={{
-                  stroke: '#64ffda',
-                  strokeWidth: 1
-                }}>
-                    {categoryData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
+                  <Pie 
+                    data={categoryData} 
+                    cx="50%" 
+                    cy="50%" 
+                    innerRadius={60} 
+                    outerRadius={80} 
+                    fill="#8884d8" 
+                    paddingAngle={5} 
+                    dataKey="value" 
+                    animationDuration={1500}
+                    label={({ name }) => name}
+                    labelLine={{
+                      stroke: '#64ffda',
+                      strokeWidth: 1
+                    }}
+                  >
+                    {categoryData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
                   </Pie>
                   <Tooltip content={<PieCustomTooltip />} />
                 </PieChart>
               </ResponsiveContainer>
             </div>
             
-            <div className="mt-6 grid grid-cols-5 gap-2">
-              {categoryData.map((category, index) => <div key={index} className="flex items-center">
-                  <div className="w-3 h-3 rounded-full mr-2" style={{
-                backgroundColor: COLORS[index % COLORS.length]
-              }}></div>
-                  <span className="text-tech-light-slate text-sm">{category.name}</span>
-                </div>)}
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+              {categoryData.map((category, index) => (
+                <div key={index} className="flex items-center text-sm">
+                  <div className="w-3 h-3 rounded-full mr-2 flex-shrink-0" style={{
+                    backgroundColor: COLORS[index % COLORS.length]
+                  }}></div>
+                  <span className="text-tech-light-slate text-sm truncate">{category.name}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
         
         <div className="mt-12 glass p-6 reveal">
-          
-          
-          {["Language", "DATA & IA", "FrontEnd & BackEnd", "Mobile", "Cloud & DevOps"].map((category, categoryIndex) => <div key={categoryIndex} className="mb-8">
-              <h4 className="text-lg font-medium mb-4 text-tech-light-blue border-b border-tech-light-navy pb-2">{category}</h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {skillsData.filter(skill => skill.category === category).map((skill, index) => <div key={index} className="glass p-4 flex flex-col items-center text-center transition-transform hover:scale-105">
+          {["Language", "DATA & IA", "FrontEnd & BackEnd", "Mobile", "Cloud & DevOps"].map((category, categoryIndex) => (
+            <div key={categoryIndex} className="mb-8">
+              <h4 className="text-lg font-medium mb-4 text-tech-light-blue border-b border-tech-light-navy pb-2">
+                {category}
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {skillsData
+                  .filter(skill => skill.category === category)
+                  .map((skill, index) => (
+                    <div 
+                      key={index} 
+                      className="glass p-4 flex flex-col items-center text-center transition-transform hover:scale-105"
+                    >
                       <div className="mb-3 text-tech-light-blue">{skill.icon}</div>
-                      <h4 className="font-medium text-tech-lightest-slate">{skill.name}</h4>
-                    </div>)}
+                      <h4 className="font-medium text-tech-lightest-slate text-sm">{skill.name}</h4>
+                    </div>
+                  ))}
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
     </section>;
 };
+
 export default Skills;
