@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Otter } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NavItem = ({ href, text, onClick }: { href: string; text: string; onClick?: () => void }) => (
@@ -56,8 +56,9 @@ const Navbar: React.FC = () => {
       )}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-tech-light-blue font-poppins">
-          🦦 Msall Abdel AZIZ<span className="text-tech-lightest-slate">.</span>
+        <a href="#" className="text-2xl font-bold text-tech-light-blue font-poppins flex items-center">
+          <Otter className="mr-2" size={32} /> 
+          Msall Abdel AZIZ<span className="text-tech-lightest-slate">.</span>
         </a>
 
         {/* Desktop Menu */}
