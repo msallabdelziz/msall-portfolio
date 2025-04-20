@@ -219,13 +219,13 @@ const Skills: React.FC = () => {
               </ResponsiveContainer>
             </div>
             
-            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4">
               {categoryData.map((category, index) => (
-                <div key={index} className="flex items-center text-sm">
+                <div key={index} className="flex items-center text-sm p-2">
                   <div className="w-3 h-3 rounded-full mr-2 flex-shrink-0" style={{
                     backgroundColor: COLORS[index % COLORS.length]
                   }}></div>
-                  <span className="text-tech-light-slate text-sm truncate">{category.name}</span>
+                  <span className="text-tech-light-slate text-sm break-words line-clamp-2">{category.name}</span>
                 </div>
               ))}
             </div>
