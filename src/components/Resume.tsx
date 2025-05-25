@@ -45,7 +45,7 @@ const Resume: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="/lovable-uploads/42fb82d8-8cee-45c2-8d7c-c0528fffd7fa.png"
+                href="/lovable-uploads/f72f66dc-f46a-4588-a64d-a511d6827a62.png"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center w-full sm:w-auto bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue font-medium px-6 py-3 border border-tech-light-blue rounded-md transition-all duration-300"
@@ -54,7 +54,7 @@ const Resume: React.FC = () => {
                 Voir mon CV
               </a>
               <a 
-                href="/lovable-uploads/42fb82d8-8cee-45c2-8d7c-c0528fffd7fa.png"
+                href="/lovable-uploads/f72f66dc-f46a-4588-a64d-a511d6827a62.png"
                 download="CV_Mamadou_Abdel_Aziz_Sall.png"
                 className="group flex items-center justify-center w-full sm:w-auto bg-tech-light-blue text-tech-dark-blue hover:bg-tech-light-blue/90 font-medium px-6 py-3 rounded-md transition-all duration-300"
               >
@@ -82,4 +82,3 @@ const Resume: React.FC = () => {
 };
 
 export default Resume;
-
