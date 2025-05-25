@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Award, Book, Briefcase, Code, Globe, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
@@ -95,7 +96,7 @@ const About: React.FC = () => {
                 >
                   <div className="absolute inset-0 bg-tech-light-blue/20 group-hover:bg-transparent transition duration-300 z-10"></div>
                   <img 
-                    src="/lovable-uploads/1c335152-00f5-452e-88df-fb2ba6bcbb54.png" 
+                    src="/lovable-uploads/f72f66dc-f46a-4588-a64d-a511d6827a62.png" 
                     alt="Mamadou Abdel Aziz Sall" 
                     className="w-full h-full object-cover"
                   />
@@ -116,7 +117,7 @@ const About: React.FC = () => {
             </DialogClose>
             <div className="flex items-center justify-center">
               <img 
-                src="/lovable-uploads/1c335152-00f5-452e-88df-fb2ba6bcbb54.png" 
+                src="/lovable-uploads/f72f66dc-f46a-4588-a64d-a511d6827a62.png" 
                 alt="Mamadou Abdel Aziz Sall" 
                 className="w-auto h-auto object-contain"
               />
