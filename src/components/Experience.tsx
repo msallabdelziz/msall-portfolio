@@ -19,20 +19,34 @@ type ExperienceItem = {
 
 const experienceData: ExperienceItem[] = [{
   id: 1,
+  title: "Consultant Junior DATA & IA",
+  company: "African Development Bank",
+  period: "02/2024 - 02/2025",
+  description: [
+    "Optimisation ETL et traitements massifs avec PySpark et APIs REST",
+    "Prévisions temporelles ARIMA/SARIMA (statsmodels) avec Matplotlib et Seaborn",
+    "Détection de fraudes en temps réel (Random Forest, XGBoost via scikit-learn et Spark)",
+    "Injection de modèles ML/DL dans des applications via Flask/FastAPI packagés Docker",
+    "Conception d'API REST sécurisées (JWT, Postman, CI GitLab)",
+    "Gestion Agile de projets avec GitHub et Jira"
+  ],
+  technologies: ["ARIMA/SARIMA", "scikit-learn", "Spark", "PySpark", "Docker", "CI GitLab", "Flask/FastAPI", "API REST", "Postman"]
+}, {
+  id: 2,
   title: "Consultant Junior IT et DATA",
   company: "African Development Bank",
   period: "08/2023 - 02/2024",
   description: ["Archivage de données avec SANKOFA, gestion des infrastructures", "Développement d'un chatbot pour l'extraction de données à partir de documents PDF - avec du Python, NLP et des modèles d'IA pour améliorer l'interactivité", "Développement de solutions pour la gestion des stocks"],
   technologies: ["Python", "NLP", "IA", "Chatbot", "Gestion de données"]
 }, {
-  id: 2,
+  id: 3,
   title: "Développeur Web",
   company: "KGM Consulting",
   period: "03/2022 - 04/2023",
   description: ["Développement Backend avec NodeJS, Symfony, Laravel et Frontend avec Angular, React JS", "Analyse des besoins, conception de l'architecture logicielle et intégration de bases de données"],
   technologies: ["React", "Angular", "Node.js", "Symfony", "JavaScript"]
 }, {
-  id: 3,
+  id: 4,
   title: "Développeur web / Stage",
   company: "3W Agency - DAKAR",
   period: "Novembre 2021 - Février 2022",
