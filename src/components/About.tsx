@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
-import { Award, Book, Briefcase, Code, Globe, X } from 'lucide-react';
+import { Book, Globe, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import aboutProfile from '@/assets/about-profile.png';
 
 const About: React.FC = () => {
   const [imageOpen, setImageOpen] = useState<boolean>(false);
@@ -41,15 +42,19 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-3 reveal">
               <p className="mb-4 text-tech-light-slate">
-                En phase finale de mon <span className="text-tech-light-blue">Master 2 en Data Science & IA</span> à IA SCHOOL (Lyon), 
-                je suis passionné par l'analyse des données et l'intelligence artificielle avec une bonne expérience en programmation.
+                Ingénieur en Data Science et Intelligence Artificielle, je conçois et développe des systèmes basés sur les <span className="text-tech-light-blue">LLM</span>, allant de l’IA générative à des architectures agentiques complètes.
               </p>
               <p className="mb-4 text-tech-light-slate">
-                Je recherche actuellement un <span className="text-tech-light-blue">stage de fin d'étude de 4 à 6 mois</span> pour appliquer mes compétences 
-                en IA, DATA, Programmation et gestion de projets Agile dans des projets innovants.
+                Au fil de mes expériences, j’ai travaillé sur des solutions concrètes combinant génération de contenu (NLP, embeddings, modèles LLM) et mise en place de systèmes capables d’agir et d’automatiser des processus (RAG, agents, workflows, APIs).
+              </p>
+              <p className="mb-4 text-tech-light-slate">
+                Je m’intéresse particulièrement aux systèmes intelligents qui ne se contentent pas de produire des réponses, mais qui orchestrent des actions, exploitent des sources de données et s’intègrent dans des environnements métiers réels.
+              </p>
+              <p className="mb-4 text-tech-light-slate">
+                À la croisée de la data, du backend et de l’IA, j’aime transformer des problématiques complexes en solutions robustes, scalables et utiles, avec une forte orientation vers la mise en production et l’impact métier.
               </p>
               <p className="mb-6 text-tech-light-slate">
-                Avec plusieurs projets professionnels et personnels, j'ai pu appliquer mes compétences académiques en IA, DATA et Programmation pour développer des solutions innovantes qui transforment des données complexes en insights stratégiques, optimisent des processus et relèvent des défis technologiques concrets, en alliant rigueur scientifique et créativité technique.
+                Aujourd’hui, je suis à la recherche d’opportunités en IA/Data où je peux concevoir et déployer des systèmes innovants à fort impact.
               </p>
 
               <div className="mt-6 space-y-4">
@@ -96,7 +101,7 @@ const About: React.FC = () => {
                 >
                   <div className="absolute inset-0 bg-tech-light-blue/20 group-hover:bg-transparent transition duration-300 z-10"></div>
                   <img 
-                    src="/lovable-uploads/f72f66dc-f46a-4588-a64d-a511d6827a62.png" 
+                    src={aboutProfile}
                     alt="Mamadou Abdel Aziz Sall" 
                     className="w-full h-full object-cover"
                   />
@@ -117,7 +122,7 @@ const About: React.FC = () => {
             </DialogClose>
             <div className="flex items-center justify-center">
               <img 
-                src="/lovable-uploads/f72f66dc-f46a-4588-a64d-a511d6827a62.png" 
+                src={aboutProfile}
                 alt="Mamadou Abdel Aziz Sall" 
                 className="w-auto h-auto object-contain"
               />
