@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
   const jobTitles = [
     {icon: Code, title: 'Ingénieur ML'},
     {icon: LineChart, title: 'Data Scientist'},
-    {icon: Globe, title: 'Développeur IA'}
+    {icon: Globe, title: 'IA Generative / LLM '}
   ];
 
   useEffect(() => {
