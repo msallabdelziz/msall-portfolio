@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
 import { FileText, Download } from 'lucide-react';
-import resumePdf from '@/assets/CV_IA_DS-2.pdf';
 
 const Resume: React.FC = () => {
   // Reveal animation on scroll
@@ -46,7 +45,7 @@ const Resume: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href={resumePdf}
+                href="/CV_Mamadou_Abdel_Aziz_Sall.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center w-full sm:w-auto bg-transparent hover:bg-tech-light-blue/10 text-tech-light-blue font-medium px-6 py-3 border border-tech-light-blue rounded-md transition-all duration-300"
@@ -55,7 +54,7 @@ const Resume: React.FC = () => {
                 Voir mon CV
               </a>
               <a 
-                href={resumePdf}
+                href="/CV_Mamadou_Abdel_Aziz_Sall.pdf"
                 download="CV_Mamadou_Abdel_Aziz_Sall.pdf"
                 className="group flex items-center justify-center w-full sm:w-auto bg-tech-light-blue text-tech-dark-blue hover:bg-tech-light-blue/90 font-medium px-6 py-3 rounded-md transition-all duration-300"
               >
