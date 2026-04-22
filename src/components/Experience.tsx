@@ -19,6 +19,21 @@ type ExperienceItem = {
 
 const experienceData: ExperienceItem[] = [{
   id: 1,
+  title: "ML Engineer / IA Générative",
+  company: "ALTEN",
+  location: "Direction Innovation Lab | Rennes",
+  period: "06/2025 - 12/2025",
+  description: [
+    "Conçu et intégré des solutions NLP/LLM dans des applications métier via APIs REST (FastAPI)",
+    "Structuré des workflows IA (entraînement - déploiement - monitoring) pour industrialiser les PoC",
+    "Optimisé les performances backend en réduisant le temps de réponse de 30%",
+    "Containerisé les services via Docker pour garantir portabilité et scalabilité",
+    "Automatisé les livraisons via Azure DevOps (Git, pipelines CI/CD)",
+    "Documenté les modèles pour garantir traçabilité et auditabilité"
+  ],
+  technologies: ["NLP", "LLM", "FastAPI", "APIs REST", "Docker", "Azure DevOps", "Git", "CI/CD"]
+}, {
+  id: 2,
   title: "Consultant Junior DATA & IA",
   company: "African Development Bank",
   period: "02/2024 - 02/2025",
@@ -32,21 +47,21 @@ const experienceData: ExperienceItem[] = [{
   ],
   technologies: ["ARIMA/SARIMA", "scikit-learn", "Spark", "PySpark", "Docker", "CI GitLab", "Flask/FastAPI", "API REST", "Postman"]
 }, {
-  id: 2,
+  id: 3,
   title: "Consultant Junior IT et DATA",
   company: "African Development Bank",
   period: "08/2023 - 02/2024",
   description: ["Archivage de données avec SANKOFA, gestion des infrastructures", "Développement d'un chatbot pour l'extraction de données à partir de documents PDF - avec du Python, NLP et des modèles d'IA pour améliorer l'interactivité", "Développement de solutions pour la gestion des stocks"],
   technologies: ["Python", "NLP", "IA", "Chatbot", "Gestion de données"]
 }, {
-  id: 3,
+  id: 4,
   title: "Développeur Web",
   company: "KGM Consulting",
   period: "03/2022 - 04/2023",
   description: ["Développement Backend avec NodeJS, Symfony, Laravel et Frontend avec Angular, React JS", "Analyse des besoins, conception de l'architecture logicielle et intégration de bases de données"],
   technologies: ["React", "Angular", "Node.js", "Symfony", "JavaScript"]
 }, {
-  id: 4,
+  id: 5,
   title: "Développeur web / Stage",
   company: "3W Agency - DAKAR",
   period: "Novembre 2021 - Février 2022",
